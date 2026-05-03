@@ -18,12 +18,13 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <Link href="/" className="logo">
-          तेजोमार्ग
+        <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src="/Tejomarglogo.png" alt="Tejomarg Logo" style={{ height: '80px', width: '100px' }} />
         </Link>
         
         {/* Desktop Links */}
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
+          <Link href="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <Link href="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <Link href="/our-mission" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Our Mission</Link>
           <Link href="/#voices" className="nav-link" onClick={() => setMobileMenuOpen(false)}>True Voices</Link>

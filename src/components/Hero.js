@@ -5,15 +5,14 @@ export default function Hero() {
   return (
     <section className="hero-centered">
       <div className="hero-bg-glow"></div>
+      <div className="hero-bg-glow secondary"></div>
+      <div className="hero-bg-glow tertiary"></div>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="hero-content-centered animate-fade-in">
           
-          <div className="hero-logo-mark">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="bird-icon">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
-            <h2 className="hero-brand-name">Tejomarg (तेजोमार्ग)</h2>
-          </div>
+          {/* <div className="hero-logo-mark" style={{ marginBottom: '1rem' }}>
+            <img src="/Tejomarglogo.png" alt="Tejomarg Logo" style={{ height: '160px', width: 'auto', filter: 'drop-shadow(0 10px 20px rgba(255, 123, 0, 0.2))' }} />
+          </div> */}
 
           <h1 className="hero-main-title">
             सनातन धर्म और संस्कृति का एक आध्यात्मिक मंच

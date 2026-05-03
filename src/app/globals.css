@@ -2,41 +2,49 @@
 
 :root {
   /* Constant Brand Colors */
-  --primary-saffron: #FF7B00;
-  --primary-hover: #E66A00;
-  --gold-accent: #FFB300;
+  --primary-saffron: #FF4500; /* Deep Red-Saffron from Logo */
+  --primary-gold: #FFD700;    /* Golden Yellow from Logo Text */
+  --secondary-teal: #00A896;  /* Peacock Feather Accent */
+  --saffron-gradient: linear-gradient(135deg, #FF4500 0%, #FF8C00 100%);
+  --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
   
   /* Light Mode (Default) */
   --bg-main: #FFFBF5;
-  --bg-white: #FFFFFF;
   --bg-section: #FFF3E0;
+  --bg-mesh: radial-gradient(at 0% 0%, hsla(18,100%,92%,1) 0, transparent 50%), 
+             radial-gradient(at 50% 0%, hsla(35,100%,94%,1) 0, transparent 50%), 
+             radial-gradient(at 100% 0%, hsla(45,100%,92%,1) 0, transparent 50%);
+  --bg-white: #FFFFFF;
   
-  --text-dark: #2D3748;
-  --text-muted: #718096;
+  --text-dark: #1A1A1A;
+  --text-muted: #555555;
   --text-light: #FFFFFF;
   
-  --border-color: #E2E8F0;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --border-color: rgba(255, 69, 0, 0.15);
+  --shadow-sm: 0 10px 30px rgba(255, 69, 0, 0.05);
+  --shadow-md: 0 20px 40px rgba(255, 69, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-glow: 0 4px 20px rgba(255, 123, 0, 0.15);
 }
 
 [data-theme="dark"] {
   /* Dark Mode Variables (Premium Navy Blue) */
-  --bg-main: #0B1121; /* Deep Navy Blue */
+  --bg-main: #0B1121;
+  --bg-section: #111A2E;
+  --bg-mesh: radial-gradient(at 0% 0%, hsla(18,40%,15%,1) 0, transparent 50%), 
+             radial-gradient(at 50% 0%, hsla(35,30%,12%,1) 0, transparent 50%), 
+             radial-gradient(at 100% 0%, hsla(45,20%,10%,1) 0, transparent 50%);
   --bg-white: #151E32; /* Lighter Navy for cards */
-  --bg-section: #060913; /* Darkest Navy for alternate sections */
   
-  --text-dark: #F8FAFC; /* Crisp white for main text */
-  --text-muted: #94A3B8; /* Slate gray for secondary text */
-  --text-light: #0B1121; /* Dark text for inverted elements */
+  --text-dark: #FFFFFF; /* Pure white for main text */
+  --text-muted: #CBD5E1; /* Light slate for readability */
+  --text-light: #0B1121;
   
-  --border-color: #1E293B; /* Subtle slate border */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 4px 20px rgba(255, 123, 0, 0.2);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 4px 20px rgba(255, 69, 0, 0.2);
 }
 
 * {
@@ -62,6 +70,15 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-dark);
 }
 
+.section-title {
+  color: var(--primary-saffron);
+  text-shadow: 0 2px 4px rgba(255, 69, 0, 0.1);
+}
+
+.text-gold {
+  color: var(--primary-gold);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -74,9 +91,9 @@ a:hover {
 
 /* Utilities */
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .text-saffron {
@@ -87,6 +104,15 @@ a:hover {
   background-color: var(--bg-white);
 }
 
+.modern-card {
+  background: var(--bg-white);
+  padding: 2.5rem;
+  border-radius: 40px 15px 40px 15px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -94,7 +120,7 @@ a:hover {
   padding: 0.8rem 2rem;
   font-weight: 700;
   /* Organic pebble shape inspired by the logo */
-  border-radius: 30px 10px 30px 10px; 
+  border-radius: 40px 15px 40px 15px; 
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -105,17 +131,17 @@ a:hover {
 }
 
 .btn-primary {
-  /* Gradient matching the logo: deep red/orange to bright orange/yellow */
-  background: radial-gradient(circle at bottom left, #D32F2F 0%, #FF7B00 60%, #FFB300 100%);
+  /* Gradient matching the logo: deep red/saffron to gold */
+  background: radial-gradient(circle at bottom left, #FF4500 0%, #FF8C00 60%, var(--primary-gold) 100%);
   color: #FFFFFF;
-  box-shadow: 0 6px 15px rgba(255, 60, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(255, 69, 0, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(255, 60, 0, 0.4);
+  box-shadow: 0 10px 25px rgba(255, 69, 0, 0.4);
   /* Reverse shape on hover for dynamic feel */
-  border-radius: 10px 30px 10px 30px;
+  border-radius: 10px 40px 10px 40px;
   color: #FFFFFF;
 }
 

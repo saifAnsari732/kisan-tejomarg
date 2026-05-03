@@ -4,8 +4,10 @@ import Hero from '../components/Hero';
 import AboutMission from '../components/AboutMission';
 import TrueVoices from '../components/TrueVoices';
 import Testimonials from '../components/Testimonials';
+import ReviewCards from '../components/ReviewCards';
 import JoinCommunity from '../components/JoinCommunity';
 import Footer from '../components/Footer';
+import DailyDevotion from '../components/DailyDevotion';
 
 export default function Home() {
   return (
@@ -13,8 +15,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutMission />
-      <Testimonials />
       <TrueVoices />
+      <Testimonials />
+      <ReviewCards />
+      <DailyDevotion />
       <JoinCommunity />
       <Footer />
     </main>
