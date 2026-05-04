@@ -19,7 +19,7 @@ export default function Hero() {
           <h1 className="hero-main-title">
             {t.title}
           </h1>
-          <p className="hero-description" style={{ fontSize: '1.25rem', maxWidth: '850px' }}>
+          <p className="hero-description" style={{ fontSize: '1.35rem', maxWidth: '850px' }}>
             {t.subtitle}
           </p>
 

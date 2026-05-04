@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/Tejomarglogo.png" alt="Tejomarg Logo" style={{ height: '80px', width: '100px' }} />
+          <img src="/Tejomarglogo.png" alt="Tejomarg Logo" style={{ height: '80px' }} />
         </Link>
         
         {/* Desktop Links */}
