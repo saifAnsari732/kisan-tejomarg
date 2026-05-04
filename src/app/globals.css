@@ -28,24 +28,25 @@
 }
 
 [data-theme="dark"] {
-  /* Dark Mode Variables (Premium Navy Blue) */
-  --bg-main: #0B1121;
-  --bg-section: #111A2E;
-  --bg-mesh: radial-gradient(at 0% 0%, hsla(18,40%,15%,1) 0, transparent 50%), 
-             radial-gradient(at 50% 0%, hsla(35,30%,12%,1) 0, transparent 50%), 
-             radial-gradient(at 100% 0%, hsla(45,20%,10%,1) 0, transparent 50%);
-  --bg-white: #151E32; /* Lighter Navy for cards */
+  /* Dark Mode Variables (Deep Premium Navy Blue) */
+  --bg-main: #020617; /* Deepest Navy */
+  --bg-section: #0F172A; /* Deeper Navy for sections */
+  --bg-mesh: radial-gradient(at 0% 0%, hsla(18,40%,8%,1) 0, transparent 50%), 
+             radial-gradient(at 50% 0%, hsla(35,30%,6%,1) 0, transparent 50%), 
+             radial-gradient(at 100% 0%, hsla(45,20%,5%,1) 0, transparent 50%);
+  --bg-white: #1E293B; /* Slightly lighter navy for cards to pop */
   
-  --text-dark: #FFFFFF; /* Pure white for main text */
-  --text-muted: #CBD5E1; /* Light slate for readability */
-  --text-light: #0B1121;
+  --text-dark: #F8FAFC; /* Off-white for better eye comfort */
+  --text-muted: #94A3B8; /* Muted slate */
+  --text-light: #020617;
   
-  --border-color: rgba(255, 255, 255, 0.1);
-  --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 20px 40px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 4px 20px rgba(255, 69, 0, 0.2);
+  --border-color: rgba(255, 255, 255, 0.05);
+  --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 20px 40px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.8);
+  --shadow-glow: 0 4px 20px rgba(255, 69, 0, 0.15);
 }
+
 
 * {
   box-sizing: border-box;

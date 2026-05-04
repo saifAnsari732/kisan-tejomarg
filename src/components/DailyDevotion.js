@@ -8,7 +8,7 @@ export default function DailyDevotion() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('hindu god');
+  const [activeFilter, setActiveFilter] = useState('Ganesha');
 
   const filters = [
     { label: 'All', query: 'hindu god authentic' },

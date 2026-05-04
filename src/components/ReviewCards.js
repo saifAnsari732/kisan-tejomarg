@@ -104,7 +104,7 @@ export default function ReviewCards() {
                   ))}
                 </div>
                 
-                <p className="review-text italic">"{review.text}"</p>
+                <p className="review-text italic">&quot;{review.text}&quot;</p>
                 
                 <div className="review-footer">
                   <h4 className="author-name">{review.name}</h4>
