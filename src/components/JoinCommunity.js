@@ -1,6 +1,12 @@
 "use client";
 
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../data/translations';
+
 export default function JoinCommunity() {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
+
   const socials = [
     { name: "YouTube", url: "https://www.youtube.com/@Tejomarg", icon: "youtube", color: "#FF0000" },
     { name: "Instagram", url: "https://www.instagram.com/tejomarg/", icon: "instagram", color: "#E4405F" },
@@ -14,10 +20,13 @@ export default function JoinCommunity() {
       <div className="container">
         <div className="join-community-card glass-effect animate-fade-in">
           <div className="join-content text-center">
-            <span className="hero-pill mb-4">Community</span>
-            <h2 className="section-title-large mb-6">तेजोमार्ग परिवार से जुड़ें</h2>
-            <p className="text-muted text-lg mb-10 max-w-2xl mx-auto">
-              सनातन धर्म और संस्कृति के इस पावन मार्ग पर हमारे साथ चलें। यूट्यूब और इंस्टाग्राम पर हमारे दैनिक विचारों से जुड़ें।
+            <span className="hero-pill mb-4">{t.invitation}</span>
+            <h2 className="section-title-large mb-6">{language === 'hi' ? 'हमारे साथ जुड़ें' : 'Connect With Us'}</h2>
+            <p className="text-muted text-lg mb-4 max-w-2xl mx-auto">
+              {t.desc}
+            </p>
+            <p className="text-saffron font-bold text-xl mb-10">
+              {t.email}
             </p>
             
             <div className="social-pill-grid">

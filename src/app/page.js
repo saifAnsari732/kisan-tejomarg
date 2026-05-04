@@ -9,6 +9,7 @@ import JoinCommunity from '../components/JoinCommunity';
 import Footer from '../components/Footer';
 import DailyDevotion from '../components/DailyDevotion';
 
+
 export default function Home() {
   return (
     <main>

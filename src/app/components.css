@@ -100,6 +100,33 @@
   transform: translateY(-2px);
 }
 
+.lang-toggle-btn {
+  background: var(--bg-section);
+  border: 1px solid var(--border-color);
+  color: var(--primary-saffron);
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lang-toggle-btn:hover {
+  background: var(--primary-saffron);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 900px) {
+  .desktop-only { display: none; }
+  .mobile-only-actions { display: flex !important; }
+}
+
+/* Theme Toggle Btn */
 .theme-toggle-btn {
   background: none;
   border: none;

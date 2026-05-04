@@ -3,9 +3,14 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../data/translations';
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language].nav;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +29,19 @@ export default function Navbar() {
         
         {/* Desktop Links */}
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-          <Link href="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link href="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-          <Link href="/our-mission" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Our Mission</Link>
-          <Link href="/#voices" className="nav-link" onClick={() => setMobileMenuOpen(false)}>True Voices</Link>
+          <Link href="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.home}</Link>
+          <Link href="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.about}</Link>
+          <Link href="/our-mission" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.mission}</Link>
+          <Link href="/#voices" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.TrueVoices}</Link>
+          <Link href="/#img" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.Images}</Link>
           
-          {/* Mobile Social Links visible only when menu open */}
+          {/* Mobile Actions */}
+          <div className="mobile-only-actions" style={{ display: 'none', gap: '1rem', marginTop: '1rem' }}>
+             <button onClick={toggleLanguage} className="lang-toggle-btn">
+               {language === 'hi' ? 'English' : 'हिंदी'}
+             </button>
+          </div>
+
           <div className="mobile-socials">
             <Link href="https://www.youtube.com/@Tejomarg" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               YouTube
@@ -41,6 +53,10 @@ export default function Navbar() {
         </div>
         
         <div className="nav-actions">
+          <button onClick={toggleLanguage} className="lang-toggle-btn desktop-only">
+            {language === 'hi' ? 'EN' : 'हिं'}
+          </button>
+          
           <ThemeToggle />
           
           <div className="social-icons">
@@ -68,3 +84,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

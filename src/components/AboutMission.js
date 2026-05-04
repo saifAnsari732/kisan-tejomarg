@@ -1,40 +1,47 @@
 "use client";
 
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../data/translations';
+
 export default function AboutMission() {
+  const { language } = useLanguage();
+  const t = translations[language].philosophy;
+  const pillars = translations[language].pillars;
+
   return (
     <section id="about" className="section-padding alt-section">
       <div className="container">
-        <h2 className="section-title">तेजोमार्ग क्या है?</h2>
-        <p className="section-subtitle">
-          ज्ञान, धर्म और संस्कृति का एक सच्चा माध्यम। हर कर्म में धर्म, हर शब्द में सत्य।
-        </p>
+        <span className="hero-pill mb-4">{t.section_tag}</span>
+        <h2 className="section-title text-left" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>{t.title}</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginBottom: '4rem' }}>
+          <p className="text-lg" style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
+            {t.description}
+          </p>
+          <p className="text-muted" style={{ fontSize: '1.1rem', borderLeft: '4px solid var(--primary-saffron)', paddingLeft: '2rem' }}>
+            {t.detailed}
+          </p>
+        </div>
         
+        <h2 className="section-title" style={{ marginTop: '4rem' }}>{pillars.title}</h2>
         <div className="card-grid">
           <div className="modern-card animate-fade-in">
-            <span className="card-pill">Our Mission</span>
-            <h3 className="text-saffron">सनातन संस्कृति का प्रसार</h3>
-            <p>
-              तेजोमार्ग एक आध्यात्मिक और सांस्कृतिक मंच है, जो सनातन धर्म को मानने वाले लोगों, 
-              हिंदू संस्कृति और भारतीय आध्यात्मिक परंपरा को आधुनिक डिजिटल माध्यमों के द्वारा जन-जन तक पहुँचाने के लिए समर्पित है।
-            </p>
+            <h3 className="text-saffron">{pillars.p1.title}</h3>
+            <p>{pillars.p1.desc}</p>
           </div>
           
           <div className="modern-card animate-fade-in delay-100">
-            <span className="card-pill">Core Belief</span>
-            <h3 className="text-saffron">सरल और सुलभ ज्ञान</h3>
-            <p>
-              हमारा उद्देश्य शास्त्रों, संतों और परंपराओं के अमूल्य ज्ञान को सरल और प्रभावी रूप में प्रस्तुत करना है। 
-              ज्ञान वह प्रकाश है जो हर हृदय तक पहुँचना चाहिए।
-            </p>
+            <h3 className="text-saffron">{pillars.p2.title}</h3>
+            <p>{pillars.p2.desc}</p>
           </div>
           
           <div className="modern-card animate-fade-in delay-200">
-            <span className="card-pill">Digital Reach</span>
-            <h3 className="text-saffron">डिजिटल पहुँच</h3>
-            <p>
-              यूट्यूब और इंस्टाग्राम के माध्यम से युवाओं और हर वर्ग तक संस्कृति का प्रसार करना। 
-              आधुनिक युग में सनातन धर्म की जड़ों से जुड़े रहने का एक सशक्त माध्यम।
-            </p>
+            <h3 className="text-saffron">{pillars.p3.title}</h3>
+            <p>{pillars.p3.desc}</p>
+          </div>
+
+          <div className="modern-card animate-fade-in delay-300">
+            <h3 className="text-saffron">{pillars.p4.title}</h3>
+            <p>{pillars.p4.desc}</p>
           </div>
         </div>
       </div>
