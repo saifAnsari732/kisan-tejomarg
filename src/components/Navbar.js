@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ThemeToggle from './ThemeToggle';
-
+import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 
@@ -11,6 +11,11 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language].nav;
+
+  // WhatsApp number (अपना नंबर यहाँ डालें)
+  const whatsappNumber = "+919511150925"; // देश कोड सहित (भारत के लिए 91)
+  const whatsappMessage = "नमस्ते! मुझे Tejomarg के बारे में अधिक जानकारी चाहिए।";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,20 +41,7 @@ export default function Navbar() {
           <Link href="/#img" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.Images}</Link>
           
           {/* Mobile Actions */}
-          <div className="mobile-only-actions" style={{ display: 'none', gap: '1rem', marginTop: '1rem' }}>
-             <button onClick={toggleLanguage} className="lang-toggle-btn">
-               {language === 'hi' ? 'English' : 'हिंदी'}
-             </button>
-          </div>
-
-          <div className="mobile-socials">
-            <Link href="https://www.youtube.com/@Tejomarg" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              YouTube
-            </Link>
-            <Link href="https://www.instagram.com/tejomarg/reels/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Instagram
-            </Link>
-          </div>
+       
         </div>
         
         <div className="nav-actions">
@@ -60,12 +52,18 @@ export default function Navbar() {
           <ThemeToggle />
           
           <div className="social-icons">
-            <Link href="https://www.youtube.com/@Tejomarg" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              YouTube
-            </Link>
-            <Link href="https://www.instagram.com/tejomarg/reels/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Instagram
-            </Link>
+           
+            {/* WhatsApp Link for Desktop */}
+            <a 
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline"
+              style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', }}
+            >
+             
+              <FaWhatsapp size={30}  style={{color:'green' }} /> WhatsApp
+            </a>
           </div>
 
           <button 
@@ -74,9 +72,16 @@ export default function Navbar() {
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
             )}
           </button>
         </div>
@@ -84,4 +89,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

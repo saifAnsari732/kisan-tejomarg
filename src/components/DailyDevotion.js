@@ -10,15 +10,16 @@ export default function DailyDevotion() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [activeFilter, setActiveFilter] = useState('Ganesha');
 
-  const filters = [
-    { label: 'All', query: 'hindu god authentic' },
-    { label: 'Ganesha', query: 'ganesha authentic' },
-    { label: 'Shiva', query: 'lord shiva authentic' },
-    { label: 'Krishna', query: 'krishna authentic' },
-    { label: 'Hanuman', query: 'hanuman authentic' },
-    { label: 'Durga', query: 'durga authentic' },
-    { label: 'Ram', query: 'lord ram authentic' },
-  ];
+ 
+const filters = [
+  { label: 'सभी', query: 'hindu god authentic' },
+  { label: 'गणेश', query: 'ganesha authentic' },
+  { label: 'शिव', query: 'lord shiva authentic' },
+  { label: 'कृष्ण', query: 'krishna authentic' },
+  { label: 'हनुमान', query: 'hanuman authentic' },
+  { label: 'दुर्गा', query: 'durga authentic' },
+  { label: 'राम', query: 'lord ram authentic' },
+];
 
   useEffect(() => {
     const loadImages = async () => {
@@ -38,9 +39,9 @@ export default function DailyDevotion() {
     <section id='img' className="section-padding light-section">
       <div className="container">
         <div className="text-center mb-10">
-          <h2 className="section-title text-saffron">Divine Gallery</h2>
-          <p className="section-subtitle">Authentic devotional wallpapers</p>
-        </div>
+  <h2 className="section-title text-saffron">दिव्य गैलरी</h2>
+  <p className="section-subtitle">प्रामाणिक भक्ति वॉलपेपर</p>
+</div>
 
         <div className="filter-tags">
           {filters.map((filter) => (

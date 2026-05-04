@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
+import Image from 'next/image';
 
 export default function OurMission() {
   const { language } = useLanguage();
@@ -41,7 +42,12 @@ export default function OurMission() {
               </p>
             </div>
             <div className="mission-story-image animate-fade-in delay-200">
-              <img src="https://images.pexels.com/photos/2161432/pexels-photo-2161432.jpeg" alt="Temple" className="rounded-premium shadow-lg" />
+              <Image
+              src="/images/sadhubaba.jpg"
+              width={500}
+              height={500}
+              alt="Team"
+              />
             </div>
           </div>
         </div>

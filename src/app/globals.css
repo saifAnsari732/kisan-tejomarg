@@ -2,10 +2,11 @@
 
 :root {
   /* Constant Brand Colors */
-  --primary-saffron: #FF4500; /* Deep Red-Saffron from Logo */
+  --primary-saffron: #e2450c; /* Deep Red-Saffron from Logo */
   --primary-gold: #FFD700;    /* Golden Yellow from Logo Text */
+  --primary-gold2: #ff0000;    /* Golden Yellow from Logo Text */
   --secondary-teal: #00A896;  /* Peacock Feather Accent */
-  --saffron-gradient: linear-gradient(135deg, #FF4500 0%, #FF8C00 100%);
+  --saffron-gradient: linear-gradient(135deg, #e74409 0%, #FF8C00 100%);
   --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
   
   /* Light Mode (Default) */
@@ -44,7 +45,9 @@
   --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.5);
   --shadow-md: 0 20px 40px rgba(0, 0, 0, 0.7);
   --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.8);
-  --shadow-glow: 0 4px 20px rgba(255, 69, 0, 0.15);
+  --shadow-glow: 0 4px 20px rgba(255, 69, 0, 0.15);   
+    --primary-saffron: #ffffff;
+     --primary-gold2: #f8d40b; 
 }
 
 
@@ -118,7 +121,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8rem 2rem;
+  padding: 0.7rem 2rem;
   font-weight: 700;
   /* Organic pebble shape inspired by the logo */
   border-radius: 40px 15px 40px 15px; 
@@ -146,11 +149,11 @@ a:hover {
   color: #FFFFFF;
 }
 
-.btn-outline {
-  background: transparent;
-  color: var(--primary-saffron);
-  border: 2px solid var(--primary-saffron);
-}
+  .btn-outline {
+    background: transparent;
+    color: var(--primary-saffron);
+    border: 1px solid var(--primary-saffron);
+  }
 
 .btn-outline:hover {
   background: rgba(255, 123, 0, 0.05);
