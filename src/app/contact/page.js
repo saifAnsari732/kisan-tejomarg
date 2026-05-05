@@ -202,7 +202,7 @@ export default function ContactPage() {
                     </div>
                     <div className="contact-details">
                       <p className="contact-label">स्थान</p>
-                      <p>आध्यात्मिक चेतना का केंद्र, भारत</p>
+                      <p>Alambag lucknow uttar pradesh</p>
                     </div>
                   </div>
                 </div>

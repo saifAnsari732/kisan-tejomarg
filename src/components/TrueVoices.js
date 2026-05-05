@@ -22,7 +22,7 @@ export default function TrueVoices() {
             <span className="card-pill">{t.tag}</span>
             <h3 className="text-saffron" style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>{t.heading}</h3>
             <blockquote style={{ fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--text-dark)', marginBottom: '1.5rem', borderLeft: '4px solid var(--primary-saffron)', paddingLeft: '1rem' }}>
-              "{t.quote}"
+              {t.quote}
             </blockquote>
             <p style={{ marginBottom: '2rem' }}>
               {t.content}
