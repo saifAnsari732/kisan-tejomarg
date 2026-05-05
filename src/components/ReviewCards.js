@@ -86,7 +86,7 @@ export default function ReviewCards() {
           <h2 className="section-title">हमारे समुदाय की क्या राय है</h2>
           <p className="section-subtitle">पूरे भारत में हजारों भक्तों द्वारा विश्वसनीय</p>
         </div>
-
+  
         <div className="review-slider-wrapper rounded-3xl">
           <div className="review-track">
             {doubleReviews.map((review, index) => (
