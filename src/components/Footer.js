@@ -27,10 +27,10 @@ export default function Footer() {
             <h4>{language === 'hi' ? 'महत्वपूर्ण लिंक' : 'Quick Links'}</h4>
             <ul>
               <li><Link href="/">{t.links.home}</Link></li>
-              <li><Link href="/#about">{t.links.about}</Link></li>
+              <li><Link href="/about">{t.links.about}</Link></li>
               <li><Link href="/our-mission">{t.links.articles}</Link></li>
-              <li><Link href="#">{t.links.privacy}</Link></li>
-              <li><Link href="#">{t.links.terms}</Link></li>
+              <li><Link href="/services">{language === 'hi' ? 'सेवाएँ' : 'Services'}</Link></li>
+              <li><Link href="/contact">{language === 'hi' ? 'संपर्क' : 'Contact'}</Link></li>
             </ul>
           </div>
           

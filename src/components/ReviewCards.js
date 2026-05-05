@@ -90,7 +90,7 @@ export default function ReviewCards() {
         <div className="review-slider-wrapper rounded-3xl">
           <div className="review-track">
             {doubleReviews.map((review, index) => (
-              <div key={`${review.id}-${index}`} className="review-card-horizontal glass-effect">
+              <div key={`${review.id}-${index}`} className="flex-shrink-0 w-[380px] bg-white/30 backdrop-blur-md rounded-2xl border border-gray-200 shadow-sm p-10 transition-all duration-300 hover:shadow-md">
                 <div className="review-header">
                   <span className="verified-pill">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

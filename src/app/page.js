@@ -1,4 +1,4 @@
-import './components.css';
+
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import AboutMission from '../components/AboutMission';
@@ -12,7 +12,7 @@ import DailyDevotion from '../components/DailyDevotion';
 
 export default function Home() {
   return (
-    <main>
+    <main className="text-center">
       <Navbar />
       <Hero />
       <AboutMission />

@@ -1,5 +1,4 @@
 "use client";
-import '../components.css';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { useLanguage } from '../../context/LanguageContext';

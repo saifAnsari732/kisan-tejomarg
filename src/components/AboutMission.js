@@ -10,10 +10,10 @@ export default function AboutMission() {
 
   return (
     <section id="about" className="section-padding alt-section">
-      <div className="container">
+      <div className="container text-center">
         <span className="hero-pill mb-4">{t.section_tag}</span>
-        <h2 className="section-title text-left" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>{t.title}</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginBottom: '4rem' }}>
+        <h2 className="section-title" style={{ marginBottom: '1.5rem' }}>{t.title}</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem', marginBottom: '4rem' }}>
           <p className="text-lg" style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
             {t.description}
           </p>

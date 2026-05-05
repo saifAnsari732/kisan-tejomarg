@@ -29,16 +29,18 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/Tejomarglogo.png" alt="Tejomarg Logo" style={{ height: '80px' }} />
+          <img src="/Tejomarglogo.png" alt="Tejomarg Logo" style={{ height: '70px' }} />
+        <h1 className='text-2xl font-semibold text-saffron'>तेजोमार्ग</h1>
         </Link>
         
         {/* Desktop Links */}
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
           <Link href="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.home}</Link>
-          <Link href="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.about}</Link>
+          <Link href="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.about}</Link>
           <Link href="/our-mission" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.mission}</Link>
+          <Link href="/services" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{language === 'hi' ? 'सेवाएँ' : 'Services'}</Link>
+          <Link href="/contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.contact}</Link>
           <Link href="/#voices" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.TrueVoices}</Link>
-          <Link href="/#img" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.Images}</Link>
           
           {/* Mobile Actions */}
        
@@ -62,7 +64,7 @@ export default function Navbar() {
               style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', }}
             >
              
-              <FaWhatsapp size={30}  style={{color:'green' }} /> WhatsApp
+              <FaWhatsapp size={30} className='text-3xl'  style={{color:'green' }} /> WhatsApp
             </a>
           </div>
 

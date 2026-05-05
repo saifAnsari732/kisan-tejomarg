@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
+import SocialSidebar from './socialmediaicon';
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -10,13 +11,14 @@ export default function Hero() {
 
   return (
     <section className="hero-centered">
+      <SocialSidebar/>
       <div className="hero-bg-glow"></div>
       <div className="hero-bg-glow secondary"></div>
       <div className="hero-bg-glow tertiary"></div>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        <div className="hero-content-centered animate-fade-in">
+        <div className="hero-content-centered text-center animate-fade-in">
           
-          <h1 className="hero-main-title">
+<h1 className="hero-main-title text-center mx-auto">
             {t.title}
           </h1>
           <p className="hero-description" style={{ fontSize: '1.35rem', maxWidth: '850px' }}>
@@ -31,7 +33,7 @@ export default function Hero() {
               {t.cta_secondary}
             </Link>
           </div>
-
+    
           <div className="hero-trust-dots">
             <span><span className="dot"></span> {language === 'hi' ? 'सच्ची आवाज़ें' : 'Genuine Devotees'}</span>
             <span><span className="dot"></span> {language === 'hi' ? 'सरल ज्ञान' : 'Timeless Wisdom'}</span>
