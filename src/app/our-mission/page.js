@@ -42,9 +42,9 @@ export default function OurMission() {
             </div>
             <div className="mission-story-image animate-fade-in delay-200">
               <Image
-              src="/images/sadhubaba.jpg"
+              src="/images/team.jpeg"
               width={500}
-              height={500}
+              height={600}
               alt="Team"
               />
             </div>

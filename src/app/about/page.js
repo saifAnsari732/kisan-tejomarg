@@ -311,11 +311,12 @@ export default function AboutPage() {
 
         .who-image {
           position: relative;
-          height: 400px;
+          height: 600px;
           width: 100%;
           border-radius: 2rem;
+          object-fit: cover;
           overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          // border: 1px solid rgba(255, 255, 255, 0.1);
           box-shadow: 0 0 30px rgba(249, 115, 22, 0.2);
         }
 

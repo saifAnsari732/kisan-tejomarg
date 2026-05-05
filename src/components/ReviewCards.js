@@ -87,7 +87,7 @@ export default function ReviewCards() {
           <p className="section-subtitle">पूरे भारत में हजारों भक्तों द्वारा विश्वसनीय</p>
         </div>
   
-        <div className="review-slider-wrapper rounded-3xl">
+        <div className="review-slider-wrapper py-4 rounded-3xl">
           <div className="review-track">
             {doubleReviews.map((review, index) => (
               <div key={`${review.id}-${index}`} className="flex-shrink-0 w-[380px] bg-white/30 backdrop-blur-md rounded-2xl border border-gray-200 shadow-sm p-10 transition-all duration-300 hover:shadow-md">

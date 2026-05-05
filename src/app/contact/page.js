@@ -215,7 +215,7 @@ export default function ContactPage() {
                     <FaClock />
                   </div>
                   <p className="info-label">प्रतिक्रिया समय</p>
-                  <p className="info-value">24-48 घंटे</p>
+                  <p className="info-value">24/7 घंटे</p>
                 </div>
                 
                 <div className="info-small-card">

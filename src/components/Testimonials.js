@@ -29,7 +29,7 @@ export default function Testimonials() {
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1rem' }}>
           <div>
-            <h2 className="section-title" style={{ marginBottom: '0.5rem', textAlign: 'left' }}>सच्ची कहानियाँ (Testimonials)</h2>
+            <h2 className="section-title" style={{ marginBottom: '0.5rem', textAlign: 'left' }}>सच्ची कहानियाँ</h2>
             <p className="section-subtitle" style={{ margin: '0', textAlign: 'left' }}>हमारे समुदाय के अनुभव और विचार</p>
           </div>
           
