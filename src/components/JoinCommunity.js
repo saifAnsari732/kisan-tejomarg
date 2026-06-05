@@ -36,9 +36,9 @@ export default function JoinCommunity() {
                   href={social.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="social-pill-item"
+                  className="social-pill-item custom-colored"
+                  style={{ '--brand-color': social.color }}
                 >
-                  <span className="social-dot" style={{ background: social.color }}></span>
                   {social.name}
                 </a>
               ))}
@@ -46,6 +46,23 @@ export default function JoinCommunity() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .custom-colored {
+          background-color: var(--brand-color) !important;
+          color: white !important;
+          border: none !important;
+          padding: 12px 28px !important;
+          font-weight: 600 !important;
+          letter-spacing: 0.5px !important;
+          transition: all 0.3s ease !important;
+          box-shadow: 0 4px 15px color-mix(in srgb, var(--brand-color) 40%, transparent) !important;
+        }
+        .custom-colored:hover {
+          transform: translateY(-3px) !important;
+          box-shadow: 0 8px 25px color-mix(in srgb, var(--brand-color) 60%, transparent) !important;
+        }
+      `}</style>
     </section>
   );
 }
