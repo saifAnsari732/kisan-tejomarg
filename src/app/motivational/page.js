@@ -143,7 +143,6 @@ export default function MotivationalPage() {
                   transition={{ delay: idx * 0.1 }}
                   className="mot-cat-card"
                 >
-                  <div className="mot-cat-icon">{cat.icon}</div>
                   <h3>{cat.title}</h3>
                   <p>{cat.desc}</p>
                 </motion.div>
