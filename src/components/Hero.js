@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Optimized Background Images using next/image */}
       <div className="hero-bg hero-bg-light">
         <Image 
-          src="/images/hero.webp" 
+          src="/images/bannerl.webp" 
           alt="Tejomarg Light Background" 
           fill 
           priority 
@@ -65,7 +65,7 @@ export default function Hero() {
               onClick={() => setIsConnectModalOpen(true)}
               style={{ padding: '16px 36px', borderRadius: '50px', background: 'linear-gradient(to right, #f97316, #f59e0b)', color: 'white', fontWeight: 'bold', border: 'none', cursor: 'pointer', boxShadow: '0 4px 15px rgba(249, 115, 22, 0.4)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', boxSizing: 'border-box' }}
             >
-              Connect
+              Verticals
             </button>
             <Link 
               href="#about" 
