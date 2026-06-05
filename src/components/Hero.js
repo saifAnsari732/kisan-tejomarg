@@ -114,7 +114,7 @@ export default function Hero() {
         }
 
         .hero-overlay-light {
-          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+          background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5));
         }
 
         .hero-overlay-dark {
