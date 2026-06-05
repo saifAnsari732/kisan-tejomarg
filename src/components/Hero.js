@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import SocialSidebar from './socialmediaicon';
@@ -14,6 +15,33 @@ export default function Hero() {
   return (
     <section className="hero-centered">
       <SocialSidebar />
+      
+      {/* Optimized Background Images using next/image */}
+      <div className="hero-bg hero-bg-light">
+        <Image 
+          src="/images/DFG.png" 
+          alt="Tejomarg Light Background" 
+          fill 
+          priority 
+          quality={75}
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
+        <div className="hero-bg-overlay hero-overlay-light"></div>
+      </div>
+
+      <div className="hero-bg hero-bg-dark">
+        <Image 
+          src="/images/dark.jpeg" 
+          alt="Tejomarg Dark Background" 
+          fill 
+          priority 
+          quality={75}
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
+        <div className="hero-bg-overlay hero-overlay-dark"></div>
+      </div>
       
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
         <div className="hero-content-centered animate-fade-in">
@@ -65,22 +93,41 @@ export default function Hero() {
           justify-content: center;
           text-align: center;
           padding: 10rem 1rem;
-             width: 100%;
-             height: 100%;
+          width: 100%;
+          height: 100%;
           overflow: hidden;
           transition: all 0.5s ease;
-          
-          /* लाइट मोड बैकग्राउंड (image_0103d9.jpg जैसा इफ़ेक्ट) */
-          background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('/images/DFG.png');
-          background-size: cover;
-          background-position: center;
-          background-attachment: fixed;
         }
 
-        /* डार्क मोड बैकग्राउंड */
-        :global([data-theme="dark"]) .hero-centered {
-          background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/images/dark.jpeg');
+        .hero-bg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
         }
+
+        .hero-bg-overlay {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+        }
+
+        .hero-overlay-light {
+          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+        }
+
+        .hero-overlay-dark {
+          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+        }
+
+        /* Light mode visibility */
+        .hero-bg-light { display: block; }
+        .hero-bg-dark { display: none; }
+
+        /* Dark mode visibility */
+        :global([data-theme="dark"]) .hero-bg-light { display: none; }
+        :global([data-theme="dark"]) .hero-bg-dark { display: block; }
 
         /* --- टाइटल कलर लॉजिक --- */
         

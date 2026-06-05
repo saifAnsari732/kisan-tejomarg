@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -20,6 +21,12 @@ export default function MotivationalPage() {
     { title: "Mindset Mastery", icon: "🧠", desc: "Develop an unstoppable mindset" },
     { title: "Leadership", icon: "🦁", desc: "Lead with courage and vision" },
     { title: "Career Growth", icon: "📈", desc: "Strategies for rapid professional growth" }
+  ];
+
+  const stories = [
+    { id: 1, title: "The Journey of Resilience: From Zero to Hero", image: "/images/sadhubaba.jpg", speaker: "Swami Vivekananda", views: "1.2M Views" },
+    { id: 2, title: "Finding Inner Peace in a Chaotic World", image: "/images/sadhu.png", speaker: "Sri Aurobindo", views: "850K Views" },
+    { id: 3, title: "The Power of Focus and Dedication", image: "/images/hero.png", speaker: "Chanakya Niti", views: "2.4M Views" }
   ];
 
   return (
@@ -67,10 +74,11 @@ export default function MotivationalPage() {
                 className="mot-hero-visual"
               >
                 <div className="mot-video-placeholder">
-                  <div className="mot-video-inner">
+                  <Image src="/images/sadhubaba.jpg" alt="Video Placeholder" fill style={{ objectFit: 'cover' }} />
+                  <div className="mot-video-inner" style={{ backgroundColor: 'rgba(0,0,0,0.4)' }}>
                      <div className="mot-video-text">
                        <svg className="mot-video-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                       <p>Inspiring Video Placeholder</p>
+                       <p style={{ color: '#fff', fontWeight: 'bold' }}>Watch Highlight Video</p>
                      </div>
                   </div>
                 </div>
@@ -102,19 +110,17 @@ export default function MotivationalPage() {
             </motion.div>
 
             <div className="mot-stories-grid">
-              {[1, 2, 3].map((item) => (
-                <motion.div key={item} {...fadeInUp} className="mot-story-card">
+              {stories.map((story) => (
+                <motion.div key={story.id} {...fadeInUp} className="mot-story-card">
                   <div className="mot-story-thumb">
-                    <div className="mot-thumb-bg">
-                      <span>Thumbnail {item}</span>
-                    </div>
+                    <Image src={story.image} alt={story.title} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
                     <div className="mot-thumb-overlay"></div>
                     <div className="mot-play-btn">
                       <svg fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path></svg>
                     </div>
                   </div>
-                  <h3>The Journey of Resilience: From Zero to Hero</h3>
-                  <p>Speaker Name • 1.2M Views</p>
+                  <h3>{story.title}</h3>
+                  <p>{story.speaker} • {story.views}</p>
                 </motion.div>
               ))}
             </div>
