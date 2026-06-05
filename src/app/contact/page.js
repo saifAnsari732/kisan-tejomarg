@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { submitContact } from '../../actions/contactAction';
 import { 
   FaPhone, 
   FaEnvelope, 
@@ -32,19 +33,14 @@ export default function ContactPage() {
     setStatus({ type: '', message: '' });
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const form = new FormData(e.target);
+      const res = await submitContact(form);
 
-      const data = await res.json();
-    console.log("data",data )
-      if (res.ok) {
+      if (res.success) {
         setStatus({ type: 'success', message: '✨ संदेश सफलतापूर्वक भेजा गया! हम जल्द ही आपसे संपर्क करेंगे।' });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus({ type: 'error', message: '⚠️ संदेश भेजने में विफल। कृपया पुनः प्रयास करें।' });
+        setStatus({ type: 'error', message: res.message || '⚠️ संदेश भेजने में विफल। कृपया पुनः प्रयास करें।' });
       }
     } catch (error) {
       setStatus({ type: 'error', message: '❌ एक त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।' });

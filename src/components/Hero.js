@@ -32,17 +32,23 @@ export default function Hero() {
             {t.subtitle}
           </p>
 
-          <div className="hero-buttons">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-8 relative z-10 w-full px-4" style={{ gap: '20px' }}>
             <button 
               onClick={() => setIsConnectModalOpen(true)}
-              className="btn btn-primary btn-pill"
+              style={{ padding: '16px 36px', borderRadius: '50px', background: 'linear-gradient(to right, #f97316, #f59e0b)', color: 'white', fontWeight: 'bold', border: 'none', cursor: 'pointer', boxShadow: '0 4px 15px rgba(249, 115, 22, 0.4)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', boxSizing: 'border-box' }}
             >
               Connect
             </button>
-            <Link href="#about" className="btn btn-outline btn-pill">
+            <Link 
+              href="#about" 
+              style={{ padding: '14px 32px', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', color: 'white', fontWeight: 'bold', border: '2px solid rgba(255,255,255,0.7)', cursor: 'pointer', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', textDecoration: 'none', boxSizing: 'border-box' }}
+            >
               {t.cta_primary}
             </Link>
-            <Link href="/our-mission" className="btn btn-outline btn-pill">
+            <Link 
+              href="/our-mission" 
+              style={{ padding: '14px 32px', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', color: 'white', fontWeight: 'bold', border: '2px solid rgba(255,255,255,0.7)', cursor: 'pointer', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', textDecoration: 'none', boxSizing: 'border-box' }}
+            >
               {t.cta_secondary}
             </Link>
           </div>
@@ -120,35 +126,7 @@ export default function Hero() {
           text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
         }
 
-        .hero-buttons {
-          display: flex;
-          gap: 1.5rem;
-          justify-content: center;
-        }
-
-        .btn-pill {
-          border-radius: 50px !important;
-          padding: 1rem 2.5rem;
-          font-weight: 700;
-          transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-          background: linear-gradient(45deg, #ff7b00, #ffb700);
-          border: none;
-          color: white;
-        }
-
-        .btn-outline {
-          background: rgba(255, 255, 255, 0.1);
-          border: 2px solid white;
-          color: white;
-        }
-
-        @media (max-width: 768px) {
-          .hero-buttons { flex-direction: column; align-items: center; }
-          .btn-pill { width: 85%; }
-        }
+        /* Hero buttons styling handled by Tailwind CSS */
       `}</style>
     </section>
   );

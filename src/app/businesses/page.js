@@ -1,7 +1,12 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { 
+  Megaphone, Rocket, Target, LineChart, Cpu, 
+  CheckCircle2, Globe, Users, ShieldCheck, Lightbulb
+} from 'lucide-react';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 export default function BusinessesPage() {
   const fadeInUp = {
@@ -11,244 +16,750 @@ export default function BusinessesPage() {
     transition: { duration: 0.6 }
   };
 
-  const stats = [
-    { label: "Viewers", value: "10M+" },
-    { label: "Stories", value: "500+" },
-    { label: "Experts", value: "100+" },
-    { label: "Industries", value: "50+" }
+  const coverages = [
+    {
+      title: "Digital Media & Communication",
+      icon: <Megaphone size={32} />,
+      themeColor: "#3b82f6", // blue
+      items: [
+        "Digital media trends and innovations",
+        "Social media strategies",
+        "Content creation and creator economy",
+        "Podcasting and video production",
+        "Online reputation management",
+        "Influencer marketing",
+        "Media technology and emerging platforms",
+        "Audience engagement and community building"
+      ]
+    },
+    {
+      title: "Business & Entrepreneurship",
+      icon: <Rocket size={32} />,
+      themeColor: "#f97316", // orange
+      items: [
+        "Startup ecosystem and innovation",
+        "Business planning and execution",
+        "Entrepreneurial success stories",
+        "Small and medium enterprises (SMEs/MSMEs)",
+        "Family-owned businesses",
+        "Business expansion strategies",
+        "Leadership and decision-making",
+        "Scaling and sustainability"
+      ]
+    },
+    {
+      title: "Consulting & Professional Services",
+      icon: <Users size={32} />,
+      themeColor: "#8b5cf6", // purple
+      items: [
+        "Business consulting solutions",
+        "Strategic planning",
+        "Organizational development",
+        "Operational efficiency",
+        "Corporate governance",
+        "Leadership development",
+        "Human resource strategies",
+        "Business transformation initiatives"
+      ]
+    },
+    {
+      title: "Marketing, Branding & Customer Experience",
+      icon: <Target size={32} />,
+      themeColor: "#f43f5e", // rose
+      items: [
+        "Brand strategy and positioning",
+        "Digital marketing",
+        "Performance marketing",
+        "Search engine optimization (SEO)",
+        "Customer acquisition and retention",
+        "Consumer behavior analysis",
+        "Public relations and reputation management",
+        "Customer experience and engagement"
+      ]
+    },
+    {
+      title: "Finance, Investment & Economic Insights",
+      icon: <LineChart size={32} />,
+      themeColor: "#10b981", // emerald
+      items: [
+        "Business finance and management",
+        "Investment opportunities",
+        "Startup funding and venture capital",
+        "Financial planning and forecasting",
+        "Market trends and economic developments",
+        "Wealth creation strategies",
+        "Corporate finance",
+        "Risk management"
+      ]
+    },
+    {
+      title: "Technology & Innovation",
+      icon: <Cpu size={32} />,
+      themeColor: "#0ea5e9", // sky
+      items: [
+        "Artificial Intelligence (AI)",
+        "Automation and process optimization",
+        "Digital transformation",
+        "Software and SaaS businesses",
+        "Cybersecurity",
+        "Data analytics and business intelligence",
+        "Cloud computing",
+        "Emerging technologies and future trends"
+      ]
+    }
   ];
 
-  const categories = [
-    { title: "Startups", icon: "🚀", color: "bg-blue-100 text-blue-600" },
-    { title: "Marketing", icon: "📱", color: "bg-orange-100 text-orange-600" },
-    { title: "Sales", icon: "💰", color: "bg-green-100 text-green-600" },
-    { title: "Finance", icon: "📈", color: "bg-purple-100 text-purple-600" },
-    { title: "Technology", icon: "💻", color: "bg-cyan-100 text-cyan-600" },
-    { title: "Leadership", icon: "👔", color: "bg-indigo-100 text-indigo-600" },
-    { title: "Investment", icon: "🤝", color: "bg-teal-100 text-teal-600" },
-    { title: "MSME", icon: "🏭", color: "bg-rose-100 text-rose-600" }
+  const industries = [
+    "Retail & E-Commerce", "Real Estate", "Healthcare & HealthTech", 
+    "Education & EdTech", "Agriculture & AgriTech", "Manufacturing", 
+    "Travel & Hospitality", "Infrastructure & Construction", 
+    "Energy & Sustainability", "FMCG & Consumer Brands", 
+    "Logistics & Supply Chain", "Automobile Industry", "FinTech", 
+    "Media & Entertainment", "Sports Business", "Government & Public Sector Initiatives"
   ];
 
-  const topics = ["Growth Hacking", "D2C Brands", "Venture Capital", "Bootstrapping", "B2B Sales", "Brand Building", "AI in Business"];
+  const missions = [
+    "Deliver reliable and actionable business information.",
+    "Support entrepreneurship and innovation.",
+    "Promote digital transformation and modern business practices.",
+    "Encourage leadership, creativity, and strategic thinking.",
+    "Create awareness of emerging industries and opportunities.",
+    "Build a strong bridge between businesses, professionals, and communities."
+  ];
 
   return (
-    <div className="min-h-screen bg-tejo-bg dark:bg-slate-900 pt-24 pb-12">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-trust-blue/10 to-blue-50 dark:from-trust-blue/20 dark:to-slate-900 z-0"></div>
+    <>
+      <Navbar />
+      <div className="biz-page">
         
-        {/* Tech grid pattern */}
-        <div className="absolute inset-0 opacity-10 dark:opacity-20 z-0" style={{ backgroundImage: 'linear-gradient(#1E88E5 1px, transparent 1px), linear-gradient(90deg, #1E88E5 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-
-        <div className="container relative z-10 mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="md:w-1/2"
-            >
-              <span className="inline-block py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/50 text-trust-blue dark:text-blue-300 font-semibold text-sm mb-6 border border-blue-200 dark:border-blue-800">
-                For Founders & Professionals
-              </span>
-              <h1 className="text-5xl md:text-6xl font-bold font-playfair mb-6 leading-tight text-slate-900 dark:text-white">
-                Empowering India's <br />
-                <span className="text-trust-blue">Next Generation</span> of <br />
-                Entrepreneurs
+        {/* Hero Section */}
+        <section className="biz-hero">
+          <div className="biz-container biz-hero-content">
+            <motion.div {...fadeInUp} className="biz-hero-text">
+              <span className="biz-badge">Tejomarg Business Info</span>
+              <h1 className="biz-title">
+                Empowering Businesses Through <br />
+                <span className="biz-gradient-text">Knowledge & Innovation</span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-lg">
-                Learn business, marketing, sales, finance and startup growth strategies from industry experts.
+              <p className="biz-subtitle">
+                In today’s rapidly evolving business landscape, success is driven by informed decisions, strategic thinking, innovation, and adaptability. Tejomarg Business Info is a comprehensive platform dedicated to delivering valuable insights, industry knowledge, and growth opportunities.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="bg-trust-blue hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all hover:-translate-y-1 hover:shadow-lg flex items-center">
-                  Explore Insights
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-                </button>
-                <button className="bg-white dark:bg-slate-800 text-trust-blue border border-trust-blue px-8 py-4 rounded-xl font-bold transition-all hover:bg-blue-50 dark:hover:bg-slate-700 hover:-translate-y-1">
-                  Watch Business Stories
-                </button>
-              </div>
+              <p className="biz-desc">
+                Whether you are building a startup, scaling an established company, exploring new opportunities, or navigating digital transformation, we serve as your reliable source for business knowledge and strategic guidance.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* What We Cover Section */}
+        <section className="biz-section biz-bg-light">
+          <div className="biz-container">
+            <motion.div {...fadeInUp} className="biz-section-header">
+              <h2>What We Cover</h2>
+              <div className="biz-divider"></div>
             </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="md:w-1/2 relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2">
-                <div className="bg-slate-100 dark:bg-slate-900 rounded-xl aspect-[4/3] flex items-center justify-center relative overflow-hidden">
-                   {/* Abstract dashboard graphic */}
-                   <div className="absolute top-4 left-4 right-4 h-12 bg-white dark:bg-slate-800 rounded-lg flex items-center px-4 gap-2 opacity-50">
-                     <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                     <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                     <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                   </div>
-                   <div className="absolute bottom-4 left-4 w-1/3 h-1/2 bg-blue-200 dark:bg-blue-900/40 rounded-t-lg"></div>
-                   <div className="absolute bottom-4 left-[40%] w-1/4 h-2/3 bg-orange-200 dark:bg-orange-900/40 rounded-t-lg"></div>
-                   <div className="absolute bottom-4 right-4 w-1/4 h-3/4 bg-trust-blue opacity-80 rounded-t-lg"></div>
-                   
-                   <div className="text-center text-slate-500 z-10 bg-white/80 dark:bg-slate-800/80 backdrop-blur p-4 rounded-lg">
-                     <p className="font-semibold">Business Growth Dashboard Placeholder</p>
-                   </div>
+            <div className="biz-grid">
+              {coverages.map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  {...fadeInUp}
+                  transition={{ delay: idx * 0.1 }}
+                  className="biz-card"
+                  style={{ '--theme-color': item.themeColor }}
+                >
+                  <div className="biz-card-icon">
+                    {item.icon}
+                  </div>
+                  <h3>{item.title}</h3>
+                  <ul className="biz-list">
+                    {item.items.map((point, i) => (
+                      <li key={i}>
+                        <CheckCircle2 className="biz-check-icon" size={18} />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Industry Coverage Section */}
+        <section className="biz-section biz-border-y">
+          <div className="biz-container">
+            <div className="biz-flex-row">
+              <motion.div {...fadeInUp} className="biz-flex-left">
+                <div className="biz-icon-box">
+                  <Globe size={32} />
                 </div>
-              </div>
+                <h2>Industry Coverage</h2>
+                <p>
+                  Tejomarg Business Info spans a wide range of industries, providing deep insights tailored to specific sectors.
+                </p>
+              </motion.div>
               
-              {/* Floating Stat Card */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 4 }}
-                className="absolute top-10 -left-8 glass-panel p-4 rounded-xl flex items-center gap-4 shadow-lg border border-white/40"
-              >
-                <div className="bg-tejo-orange/20 p-3 rounded-lg text-tejo-orange">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Revenue Growth</p>
-                  <p className="text-xl font-bold text-slate-900 dark:text-white">+340%</p>
+              <motion.div {...fadeInUp} className="biz-flex-right">
+                <div className="biz-tags">
+                  {industries.map((industry, idx) => (
+                    <span key={idx} className="biz-tag">
+                      {industry}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Business Insights Dashboard (Stats) */}
-      <section className="py-12 bg-white dark:bg-slate-800 border-y border-slate-100 dark:border-slate-700">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, idx) => (
-              <motion.div 
-                key={idx} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="text-center"
-              >
-                <h3 className="text-4xl md:text-5xl font-bold text-trust-blue mb-2">{stat.value}</h3>
-                <p className="text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider text-sm">{stat.label}</p>
+        {/* Vision & Mission Section */}
+        <section className="biz-section biz-bg-light">
+          <div className="biz-container">
+            <div className="biz-grid-2">
+              
+              {/* Vision */}
+              <motion.div {...fadeInUp} className="biz-vision-card">
+                <Lightbulb size={48} className="biz-vision-icon" />
+                <h2>Our Vision</h2>
+                <p>
+                  To become a leading platform that connects businesses, entrepreneurs, innovators, and professionals with knowledge, opportunities, and insights that drive sustainable growth and positive impact.
+                </p>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Featured Business Stories */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-between items-end mb-12">
+              {/* Mission */}
+              <motion.div {...fadeInUp} className="biz-mission-card">
+                <ShieldCheck size={48} className="biz-mission-icon" />
+                <h2>Our Mission</h2>
+                <ul className="biz-mission-list">
+                  {missions.map((mission, idx) => (
+                    <li key={idx}>
+                      <div className="biz-mission-check">
+                        <CheckCircle2 size={16} />
+                      </div>
+                      <span>{mission}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* Why Tejomarg Section */}
+        <section className="biz-cta-section">
+          <div className="biz-cta-bg"></div>
+          <div className="biz-container biz-cta-content">
             <motion.div {...fadeInUp}>
-              <h2 className="text-3xl md:text-4xl font-bold font-playfair mb-4 text-slate-900 dark:text-white">Featured Business Stories</h2>
-              <p className="text-slate-600 dark:text-slate-400">Learn from the best in the industry.</p>
+              <h2>Why Tejomarg Business Info?</h2>
+              <p>
+                At Tejomarg, we believe that every successful business begins with a vision, but sustainable success is achieved through knowledge, strategy, and continuous learning. Our platform is designed to inform, inspire, and empower individuals and organizations across every stage of their business journey.
+              </p>
+              <p className="biz-mb">
+                From startups to established enterprises, from digital media to consulting, from local businesses to global industries—we cover everything that contributes to business growth, innovation, and success.
+              </p>
+              
+              <div className="biz-quote-box">
+                <h3>Knowledge. Innovation. Growth. Impact.</h3>
+                <p>"Where Ideas Become Opportunities and Information Becomes Growth."</p>
+              </div>
             </motion.div>
-            <motion.a href="#" {...fadeInUp} className="hidden md:flex text-trust-blue font-semibold hover:text-blue-700 items-center">
-              View All <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-            </motion.a>
           </div>
+        </section>
+      </div>
+      <Footer />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <motion.div key={item} {...fadeInUp} className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-soft hover:shadow-xl transition-all group border border-slate-100 dark:border-slate-700">
-                <div className="relative aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                  {/* Image Placeholder */}
-                  <div className="absolute inset-0 bg-slate-300 dark:bg-slate-600 group-hover:scale-105 transition-transform duration-500"></div>
-                  
-                  {/* Overlay Stats */}
-                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full flex items-center">
-                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/></svg>
-                    250K Views
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex gap-2 mb-3">
-                    <span className="text-xs font-bold text-tejo-orange bg-orange-50 dark:bg-orange-900/30 px-2 py-1 rounded">Startup</span>
-                    <span className="text-xs font-bold text-trust-blue bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">Growth</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-trust-blue transition-colors">How We Scaled Our D2C Brand to ₹100Cr in 2 Years</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Discover the exact marketing strategies and operational shifts that allowed this bootstrap company to experience hypergrowth.</p>
-                  
-                  <div className="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
-                    <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-600"></div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-900 dark:text-white">Rahul Sharma</p>
-                      <p className="text-xs text-slate-500">Founder, EcoBrands</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <style jsx>{`
+        /* Pure CSS Styling for Businesses Page */
+        .biz-page {
+          font-family: 'Inter', -apple-system, sans-serif;
+          background-color: #ffffff;
+          color: #1e293b;
+          min-height: 100vh;
+        }
 
-      {/* Business Categories & Trending Topics */}
-      <section className="py-20 bg-white dark:bg-slate-800">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <motion.div {...fadeInUp} className="mb-10">
-                <h2 className="text-3xl font-bold font-playfair mb-2 text-slate-900 dark:text-white">Explore Categories</h2>
-                <div className="w-16 h-1 bg-trust-blue rounded-full"></div>
-              </motion.div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {categories.map((cat, idx) => (
-                  <motion.div 
-                    key={idx} 
-                    {...fadeInUp} 
-                    transition={{ delay: idx * 0.05 }}
-                    className="p-4 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-trust-blue dark:hover:border-trust-blue hover:shadow-md transition-all cursor-pointer group flex flex-col items-center text-center"
-                  >
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-2xl mb-3 ${cat.color} group-hover:scale-110 transition-transform`}>
-                      {cat.icon}
-                    </div>
-                    <h3 className="font-semibold text-slate-800 dark:text-slate-200 text-sm">{cat.title}</h3>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+        :global([data-theme="dark"]) .biz-page {
+          background-color: #0f172a;
+          color: #f8fafc;
+        }
 
-            <div>
-              <motion.div {...fadeInUp} className="mb-10">
-                <h2 className="text-3xl font-bold font-playfair mb-2 text-slate-900 dark:text-white">Trending Topics</h2>
-                <div className="w-16 h-1 bg-tejo-orange rounded-full"></div>
-              </motion.div>
-              
-              <div className="flex flex-wrap gap-2">
-                {topics.map((topic, idx) => (
-                  <motion.span 
-                    key={idx}
-                    {...fadeInUp}
-                    transition={{ delay: idx * 0.05 }}
-                    className="px-4 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-trust-blue hover:text-white hover:border-trust-blue transition-colors cursor-pointer"
-                  >
-                    #{topic}
-                  </motion.span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        .biz-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 24px;
+        }
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-trust-blue z-0"></div>
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 z-0"></div>
-        
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div {...fadeInUp} className="max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold font-playfair mb-6 text-white">Grow Your Business With Expert Insights</h2>
-            <p className="text-xl text-blue-100 mb-10">
-              Get access to premium business case studies, founder interviews, and growth strategies.
-            </p>
-            <button className="bg-white text-trust-blue px-10 py-4 rounded-xl font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] shadow-lg">
-              Start Learning Today
-            </button>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+        /* Hero Section */
+        .biz-hero {
+          position: relative;
+          padding: 160px 0 100px;
+          overflow: hidden;
+          background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+          color: #ffffff;
+          text-align: center;
+        }
+
+        .biz-hero-content {
+          position: relative;
+          z-index: 10;
+        }
+
+        .biz-hero-text {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .biz-badge {
+          display: inline-block;
+          background-color: rgba(59, 130, 246, 0.2);
+          color: #93c5fd;
+          border: 1px solid rgba(96, 165, 250, 0.3);
+          padding: 6px 16px;
+          border-radius: 50px;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          margin-bottom: 24px;
+        }
+
+        .biz-title {
+          font-size: 3.5rem;
+          font-weight: 800;
+          line-height: 1.2;
+          margin-bottom: 24px;
+          color: #ffffff;
+          font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        .biz-gradient-text {
+          background: linear-gradient(to right, #fb923c, #fcd34d);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .biz-subtitle {
+          font-size: 1.25rem;
+          color: #cbd5e1;
+          margin-bottom: 20px;
+          line-height: 1.6;
+        }
+
+        .biz-desc {
+          font-size: 1.125rem;
+          color: #94a3b8;
+          line-height: 1.6;
+        }
+
+        /* Generic Section */
+        .biz-section {
+          padding: 100px 0;
+        }
+
+        .biz-bg-light {
+          background-color: #f8fafc;
+        }
+
+        :global([data-theme="dark"]) .biz-bg-light {
+          background-color: #1e293b;
+        }
+
+        .biz-border-y {
+          border-top: 1px solid #e2e8f0;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
+        :global([data-theme="dark"]) .biz-border-y {
+          border-color: #334155;
+        }
+
+        .biz-section-header {
+          text-align: center;
+          margin-bottom: 64px;
+        }
+
+        .biz-section-header h2, .biz-flex-left h2, .biz-vision-card h2, .biz-mission-card h2, .biz-cta-content h2 {
+          font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        .biz-section-header h2 {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: #0f172a;
+          margin-bottom: 16px;
+        }
+
+        :global([data-theme="dark"]) .biz-section-header h2 {
+          color: #ffffff;
+        }
+
+        .biz-divider {
+          width: 80px;
+          height: 6px;
+          background: linear-gradient(to right, #f97316, #fbbf24);
+          margin: 0 auto;
+          border-radius: 10px;
+        }
+
+        /* Grid & Cards */
+        .biz-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 32px;
+        }
+
+        .biz-card {
+          background-color: #ffffff;
+          border-radius: 24px;
+          padding: 40px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          border: 1px solid #f1f5f9;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        :global([data-theme="dark"]) .biz-card {
+          background-color: #0f172a;
+          border-color: #334155;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .biz-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        :global([data-theme="dark"]) .biz-card:hover {
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .biz-card-icon {
+          width: 64px;
+          height: 64px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+          background-color: color-mix(in srgb, var(--theme-color) 15%, transparent);
+          color: var(--theme-color);
+        }
+
+        .biz-card h3 {
+          font-family: 'Inter', -apple-system, sans-serif;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 24px;
+        }
+
+        :global([data-theme="dark"]) .biz-card h3 {
+          color: #ffffff;
+        }
+
+        .biz-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .biz-list li {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 12px;
+          color: #475569;
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        :global([data-theme="dark"]) .biz-list li {
+          color: #cbd5e1;
+        }
+
+        .biz-check-icon {
+          color: var(--theme-color);
+          margin-right: 12px;
+          margin-top: 2px;
+          flex-shrink: 0;
+        }
+
+        /* Flex Layout */
+        .biz-flex-row {
+          display: flex;
+          flex-direction: column;
+          gap: 48px;
+          align-items: center;
+        }
+
+        @media (min-width: 992px) {
+          .biz-flex-row {
+            flex-direction: row;
+          }
+          .biz-flex-left {
+            flex: 0 0 35%;
+          }
+          .biz-flex-right {
+            flex: 1;
+          }
+        }
+
+        .biz-icon-box {
+          width: 64px;
+          height: 64px;
+          border-radius: 16px;
+          background-color: rgba(37, 99, 235, 0.1);
+          color: #2563eb;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+        }
+
+        :global([data-theme="dark"]) .biz-icon-box {
+          background-color: rgba(96, 165, 250, 0.15);
+          color: #60a5fa;
+        }
+
+        .biz-flex-left h2 {
+          font-size: 2.25rem;
+          font-weight: 800;
+          margin-bottom: 24px;
+          color: #0f172a;
+        }
+
+        :global([data-theme="dark"]) .biz-flex-left h2 {
+          color: #ffffff;
+        }
+
+        .biz-flex-left p {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+        }
+
+        :global([data-theme="dark"]) .biz-flex-left p {
+          color: #cbd5e1;
+        }
+
+        .biz-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .biz-tag {
+          padding: 12px 20px;
+          background-color: #f1f5f9;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: #334155;
+          cursor: default;
+          transition: all 0.2s ease;
+        }
+
+        :global([data-theme="dark"]) .biz-tag {
+          background-color: #1e293b;
+          border-color: #334155;
+          color: #cbd5e1;
+        }
+
+        .biz-tag:hover {
+          background-color: #fff7ed;
+          border-color: #fed7aa;
+          color: #ea580c;
+        }
+
+        :global([data-theme="dark"]) .biz-tag:hover {
+          background-color: rgba(234, 88, 12, 0.1);
+          border-color: #ea580c;
+          color: #fb923c;
+        }
+
+        /* 2 Column Grid */
+        .biz-grid-2 {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        @media (min-width: 992px) {
+          .biz-grid-2 {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        .biz-vision-card {
+          background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+          border-radius: 32px;
+          padding: 56px 48px;
+          color: #ffffff;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .biz-vision-icon {
+          color: #60a5fa;
+          margin-bottom: 32px;
+        }
+
+        .biz-vision-card h2 {
+          font-size: 2.25rem;
+          font-weight: 800;
+          margin-bottom: 24px;
+          color: #ffffff;
+        }
+
+        .biz-vision-card p {
+          font-size: 1.125rem;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.85);
+          font-weight: 300;
+        }
+
+        .biz-mission-card {
+          background-color: #ffffff;
+          border-radius: 32px;
+          padding: 56px 48px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          border: 1px solid #f1f5f9;
+        }
+
+        :global([data-theme="dark"]) .biz-mission-card {
+          background-color: #1e293b;
+          border-color: #334155;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .biz-mission-icon {
+          color: #f97316;
+          margin-bottom: 32px;
+        }
+
+        .biz-mission-card h2 {
+          font-size: 2.25rem;
+          font-weight: 800;
+          margin-bottom: 32px;
+          color: #0f172a;
+        }
+
+        :global([data-theme="dark"]) .biz-mission-card h2 {
+          color: #ffffff;
+        }
+
+        .biz-mission-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .biz-mission-list li {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        }
+
+        .biz-mission-check {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: rgba(249, 115, 22, 0.1);
+          color: #ea580c;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 16px;
+          margin-top: 2px;
+          flex-shrink: 0;
+        }
+
+        .biz-mission-list span {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+        }
+
+        :global([data-theme="dark"]) .biz-mission-list span {
+          color: #cbd5e1;
+        }
+
+        /* CTA Section */
+        .biz-cta-section {
+          position: relative;
+          padding: 120px 0;
+          background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+          color: #ffffff;
+          text-align: center;
+        }
+
+        .biz-cta-content {
+          position: relative;
+          z-index: 10;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .biz-cta-content h2 {
+          font-size: 2.5rem;
+          font-weight: 800;
+          margin-bottom: 32px;
+          color: #ffffff;
+        }
+
+        .biz-cta-content p {
+          font-size: 1.125rem;
+          line-height: 1.7;
+          color: #fff7ed;
+          margin-bottom: 24px;
+        }
+
+        .biz-mb {
+          margin-bottom: 48px !important;
+        }
+
+        .biz-quote-box {
+          background-color: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 24px;
+          padding: 40px;
+        }
+
+        .biz-quote-box h3 {
+          font-size: 1.75rem;
+          font-weight: 800;
+          margin-bottom: 12px;
+          color: #ffffff;
+          font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        .biz-quote-box p {
+          font-size: 1.125rem;
+          font-style: italic;
+          color: #ffedd5;
+          margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+          .biz-title {
+            font-size: 2.5rem;
+          }
+          .biz-hero {
+            padding: 120px 0 80px;
+          }
+          .biz-section {
+            padding: 80px 0;
+          }
+          .biz-card {
+            padding: 32px;
+          }
+          .biz-vision-card, .biz-mission-card {
+            padding: 40px 32px;
+          }
+        }
+      `}</style>
+    </>
   );
 }
