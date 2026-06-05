@@ -24,9 +24,9 @@ export default function MotivationalPage() {
   ];
 
   const stories = [
-    { id: 1, title: "The Journey of Resilience: From Zero to Hero", image: "/images/sadhubaba.jpg", speaker: "Swami Vivekananda", views: "1.2M Views" },
-    { id: 2, title: "Finding Inner Peace in a Chaotic World", image: "/images/sadhu.png", speaker: "Sri Aurobindo", views: "850K Views" },
-    { id: 3, title: "The Power of Focus and Dedication", image: "/images/hero.png", speaker: "Chanakya Niti", views: "2.4M Views" }
+    { id: 1, title: "The Journey of Resilience: From Zero to Hero", image: "/images/resilience_thumb.png", speaker: "Swami Vivekananda", views: "1.2M Views" },
+    { id: 2, title: "Finding Inner Peace in a Chaotic World", image: "/images/inner_peace_thumb.png", speaker: "Sri Aurobindo", views: "850K Views" },
+    { id: 3, title: "The Power of Focus and Dedication", image: "/images/focus_thumb.png", speaker: "Chanakya Niti", views: "2.4M Views" }
   ];
 
   return (
