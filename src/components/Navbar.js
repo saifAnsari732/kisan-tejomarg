@@ -5,10 +5,12 @@ import ThemeToggle from './ThemeToggle';
 import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
+import ConnectModal from './ConnectModal';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language].nav;
 
@@ -53,7 +55,16 @@ export default function Navbar() {
           
           <ThemeToggle />
           
-          <div className="social-icons">
+          <div className="social-icons" style={{ alignItems: 'center' }}>
+            
+            <button 
+              onClick={() => setIsConnectModalOpen(true)}
+              className="btn btn-primary desktop-only"
+              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', borderRadius: '50px', padding: '0.5rem 1.5rem' }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              Connect
+            </button>
            
             {/* WhatsApp Link for Desktop */}
             <a 
@@ -61,7 +72,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', }}
+              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', borderRadius: '50px', padding: '0.5rem 1.5rem' }}
             >
              
               <FaWhatsapp size={30} className='text-3xl'  style={{color:'green' }} /> WhatsApp
@@ -88,6 +99,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      <ConnectModal isOpen={isConnectModalOpen} onClose={() => setIsConnectModalOpen(false)} />
     </nav>
   );
 }

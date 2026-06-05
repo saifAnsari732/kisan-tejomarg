@@ -3,10 +3,13 @@ import Link from 'next/link';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import SocialSidebar from './socialmediaicon';
+import { useState } from 'react';
+import ConnectModal from './ConnectModal';
 
 export default function Hero() {
   const { language } = useLanguage();
   const t = translations[language].hero;
+  const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
 
   return (
     <section className="hero-centered">
@@ -30,15 +33,22 @@ export default function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <Link href="#about" className="btn btn-primary btn-pill">
+            <button 
+              onClick={() => setIsConnectModalOpen(true)}
+              className="btn btn-primary btn-pill"
+            >
+              Connect
+            </button>
+            <Link href="#about" className="btn btn-outline btn-pill">
               {t.cta_primary}
             </Link>
-            <Link href="/our-mission" className="btn btn-primary btn-pill">
+            <Link href="/our-mission" className="btn btn-outline btn-pill">
               {t.cta_secondary}
             </Link>
           </div>
         </div>
       </div>
+      <ConnectModal isOpen={isConnectModalOpen} onClose={() => setIsConnectModalOpen(false)} />
 
       <style jsx>{`
         .hero-centered {
