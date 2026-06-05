@@ -127,6 +127,26 @@ export default function BusinessesPage() {
     "Build a strong bridge between businesses, professionals, and communities."
   ];
 
+  const testimonials = [
+    { role: "Startup Founder", quote: "Tejomarg Business Info provides practical insights that go beyond theory. The content helped us understand market trends, improve our branding strategy, and make more confident business decisions.", author: "Startup Entrepreneur" },
+    { role: "Business Consultant", quote: "The platform covers a wide range of industries and delivers information in a way that is easy to understand and implement. It has become one of my preferred sources for business updates and industry insights.", author: "Business Consultant" },
+    { role: "Digital Media Professional", quote: "The digital media and branding content from Tejomarg has been extremely valuable. The insights on audience engagement, content strategy, and online growth helped us strengthen our digital presence.", author: "Media & Marketing Professional" },
+    { role: "Small Business Owner", quote: "Running a business requires constant learning. Tejomarg Business Info provides relevant knowledge, practical guidance, and fresh perspectives that help businesses stay competitive.", author: "Small Business Owner" },
+    { role: "Industry Professional", quote: "What makes Tejomarg unique is its ability to combine business knowledge, innovation, and real-world applications. The platform offers valuable information for professionals across different sectors.", author: "Industry Expert" },
+    { role: "Entrepreneur & Investor", quote: "Tejomarg Business Info serves as a bridge between ideas and execution. The content is insightful, informative, and highly relevant for anyone looking to grow professionally or commercially.", author: "Entrepreneur & Investor" }
+  ];
+
+  const communityMembers = [
+    "Entrepreneurs & Startup Founders",
+    "Business Owners & MSMEs",
+    "Consultants & Advisors",
+    "Digital Creators & Media Professionals",
+    "Investors & Financial Experts",
+    "Corporate Leaders & Executives",
+    "Innovators & Technology Enthusiasts",
+    "Industry Professionals Across Multiple Sectors"
+  ];
+
   return (
     <>
       <Navbar />
@@ -244,6 +264,68 @@ export default function BusinessesPage() {
               </motion.div>
 
             </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="biz-section biz-border-y">
+          <div className="biz-container">
+            <motion.div {...fadeInUp} className="biz-section-header">
+              <h2>What People Say About Tejomarg Business Info</h2>
+              <p className="biz-section-desc">
+                At Tejomarg, we measure our success through the growth, trust, and positive impact we create for businesses, entrepreneurs, professionals, and organizations. Here are some experiences shared by members of our community.
+              </p>
+              <div className="biz-divider" style={{ marginTop: '24px' }}></div>
+            </motion.div>
+
+            <div className="biz-grid">
+              {testimonials.map((testi, idx) => (
+                <motion.div 
+                  key={idx}
+                  {...fadeInUp}
+                  transition={{ delay: idx * 0.1 }}
+                  className="biz-card biz-testi-card"
+                >
+                  <div className="biz-testi-star">⭐ {testi.role}</div>
+                  <p className="biz-testi-quote">"{testi.quote}"</p>
+                  <div className="biz-testi-author">— {testi.author}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trusted By Section */}
+        <section className="biz-section biz-bg-light">
+          <div className="biz-container">
+            <motion.div {...fadeInUp} className="biz-section-header">
+              <h2>Trusted by Visionaries, Entrepreneurs & Growth Leaders</h2>
+              <p className="biz-section-desc">
+                "Tejomarg Business Info is committed to empowering businesses with knowledge, innovation, and opportunities that drive meaningful growth."
+              </p>
+              <div className="biz-divider" style={{ marginTop: '24px' }}></div>
+            </motion.div>
+
+            <div className="biz-community-box">
+              <h3>Our Community Includes:</h3>
+              <div className="biz-community-grid">
+                {communityMembers.map((member, idx) => (
+                  <motion.div key={idx} {...fadeInUp} transition={{ delay: idx * 0.05 }} className="biz-community-item">
+                    <CheckCircle2 size={20} className="biz-check-icon" />
+                    <span>{member}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <motion.div {...fadeInUp} className="biz-share-story">
+              <h3>Share Your Success Story</h3>
+              <p>
+                We value the experiences of our community. If Tejomarg Business Info has contributed to your business journey, growth, or professional success, we would love to hear your story and feature your experience.
+              </p>
+              <p className="biz-story-highlight">Your Growth. Your Story. Our Inspiration.</p>
+              <button className="biz-btn-primary">Share Your Story</button>
+            </motion.div>
           </div>
         </section>
 
@@ -740,6 +822,190 @@ export default function BusinessesPage() {
           font-style: italic;
           color: #ffedd5;
           margin-bottom: 0;
+        }
+
+        /* Additional Sections Styles */
+        .biz-section-desc {
+          font-size: 1.125rem;
+          color: #475569;
+          max-width: 800px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        :global([data-theme="dark"]) .biz-section-desc {
+          color: #cbd5e1;
+        }
+
+        .biz-testi-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .biz-testi-star {
+          font-size: 1rem;
+          font-weight: 700;
+          color: #f59e0b;
+          margin-bottom: 16px;
+          padding: 6px 12px;
+          background-color: rgba(245, 158, 11, 0.1);
+          border-radius: 50px;
+          display: inline-block;
+          width: fit-content;
+        }
+
+        .biz-testi-quote {
+          font-size: 1.05rem;
+          line-height: 1.6;
+          color: #334155;
+          margin-bottom: 24px;
+          flex-grow: 1;
+        }
+
+        :global([data-theme="dark"]) .biz-testi-quote {
+          color: #e2e8f0;
+        }
+
+        .biz-testi-author {
+          font-weight: 700;
+          color: #0f172a;
+          font-size: 1rem;
+          border-top: 1px solid #e2e8f0;
+          padding-top: 16px;
+        }
+
+        :global([data-theme="dark"]) .biz-testi-author {
+          color: #f8fafc;
+          border-color: #334155;
+        }
+
+        .biz-community-box {
+          background-color: #ffffff;
+          border-radius: 24px;
+          padding: 48px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          border: 1px solid #f1f5f9;
+          margin-bottom: 48px;
+        }
+
+        :global([data-theme="dark"]) .biz-community-box {
+          background-color: #0f172a;
+          border-color: #334155;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .biz-community-box h3 {
+          font-size: 1.75rem;
+          font-weight: 800;
+          margin-bottom: 32px;
+          color: #0f172a;
+          text-align: center;
+        }
+
+        :global([data-theme="dark"]) .biz-community-box h3 {
+          color: #ffffff;
+        }
+
+        .biz-community-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+          .biz-community-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        .biz-community-item {
+          display: flex;
+          align-items: center;
+          background-color: #f8fafc;
+          padding: 16px 24px;
+          border-radius: 16px;
+          font-size: 1.05rem;
+          font-weight: 500;
+          color: #334155;
+          transition: transform 0.2s ease;
+        }
+
+        :global([data-theme="dark"]) .biz-community-item {
+          background-color: #1e293b;
+          color: #cbd5e1;
+        }
+
+        .biz-community-item:hover {
+          transform: translateY(-2px);
+          background-color: #f1f5f9;
+        }
+
+        :global([data-theme="dark"]) .biz-community-item:hover {
+          background-color: #334155;
+        }
+
+        .biz-share-story {
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 48px;
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+          border-radius: 24px;
+          border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        :global([data-theme="dark"]) .biz-share-story {
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+          border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .biz-share-story h3 {
+          font-size: 2rem;
+          font-weight: 800;
+          color: #1e3a8a;
+          margin-bottom: 16px;
+        }
+
+        :global([data-theme="dark"]) .biz-share-story h3 {
+          color: #93c5fd;
+        }
+
+        .biz-share-story p {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+          margin-bottom: 24px;
+        }
+
+        :global([data-theme="dark"]) .biz-share-story p {
+          color: #cbd5e1;
+        }
+
+        .biz-story-highlight {
+          font-size: 1.25rem !important;
+          font-weight: 700;
+          color: #f97316 !important;
+          margin-bottom: 32px !important;
+        }
+
+        .biz-btn-primary {
+          background-color: #f58220;
+          color: white;
+          border: none;
+          padding: 16px 32px;
+          border-radius: 50px;
+          font-size: 1.125rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 10px 20px -5px rgba(245, 130, 32, 0.4);
+        }
+
+        .biz-btn-primary:hover {
+          background-color: #ea580c;
+          transform: translateY(-2px);
+          box-shadow: 0 15px 25px -5px rgba(245, 130, 32, 0.5);
         }
 
         @media (max-width: 768px) {
