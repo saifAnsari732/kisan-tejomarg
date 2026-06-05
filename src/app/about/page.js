@@ -58,7 +58,7 @@ export default function AboutPage() {
           </div>
           <div className="who-image">
             <Image
-              src="/images/sadhubaba.jpg"
+              src="/images/sadhubaba.webp"
               alt="Tejomarg Spiritual Journey"
               fill
               className="about-img"

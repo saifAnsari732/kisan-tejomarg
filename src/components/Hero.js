@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Optimized Background Images using next/image */}
       <div className="hero-bg hero-bg-light">
         <Image 
-          src="/images/DFG.png" 
+          src="/images/hero.webp" 
           alt="Tejomarg Light Background" 
           fill 
           priority 
@@ -32,7 +32,7 @@ export default function Hero() {
 
       <div className="hero-bg hero-bg-dark">
         <Image 
-          src="/images/dark.jpeg" 
+          src="/images/dark.webp" 
           alt="Tejomarg Dark Background" 
           fill 
           priority 

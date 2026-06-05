@@ -15,7 +15,7 @@ export default function TrueVoices() {
         
         <div className="hero-grid" style={{ marginTop: '3rem' }}>
           <div className="hero-image-wrapper animate-fade-in">
-            <img src="/images/sadhu.png" alt="Genuine devotee in meditation" />
+            <img src="/images/sadhu.webp" alt="Genuine devotee in meditation" />
           </div>
           
           <div className="modern-card animate-fade-in delay-100">

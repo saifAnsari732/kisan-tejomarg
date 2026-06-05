@@ -24,9 +24,9 @@ export default function MotivationalPage() {
   ];
 
   const stories = [
-    { id: 1, title: "The Journey of Resilience: From Zero to Hero", image: "/images/resilience_thumb.png", speaker: "Swami Vivekananda", views: "1.2M Views" },
-    { id: 2, title: "Finding Inner Peace in a Chaotic World", image: "/images/inner_peace_thumb.png", speaker: "Sri Aurobindo", views: "850K Views" },
-    { id: 3, title: "The Power of Focus and Dedication", image: "/images/focus_thumb.png", speaker: "Chanakya Niti", views: "2.4M Views" }
+    { id: 1, title: "The Journey of Resilience: From Zero to Hero", image: "/images/resilience_thumb.webp", speaker: "Swami Vivekananda", views: "1.2M Views" },
+    { id: 2, title: "Finding Inner Peace in a Chaotic World", image: "/images/inner_peace_thumb.webp", speaker: "Sri Aurobindo", views: "850K Views" },
+    { id: 3, title: "The Power of Focus and Dedication", image: "/images/focus_thumb.webp", speaker: "Chanakya Niti", views: "2.4M Views" }
   ];
 
   return (
@@ -74,7 +74,7 @@ export default function MotivationalPage() {
                 className="mot-hero-visual"
               >
                 <div className="mot-video-placeholder">
-                  <Image src="/images/sadhubaba.jpg" alt="Video Placeholder" fill style={{ objectFit: 'cover' }} />
+                  <Image src="/images/sadhubaba.webp" alt="Video Placeholder" fill style={{ objectFit: 'cover' }} />
                   <div className="mot-video-inner" style={{ backgroundColor: 'rgba(0,0,0,0.4)' }}>
                      <div className="mot-video-text">
                        <svg className="mot-video-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
