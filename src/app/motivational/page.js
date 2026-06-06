@@ -6,7 +6,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaUsers, FaBriefcase, FaSeedling, FaHandshake, FaStar, FaBullseye, FaEye, FaRocket, FaChevronLeft, FaChevronRight, FaPlay } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
 
 export default function MotivationalPage() {
   const sliderRef = useRef(null);
@@ -143,12 +142,12 @@ export default function MotivationalPage() {
                   In today's world, most stories that reach millions of people belong to celebrities, influencers, politicians, and public figures. Yet beyond the headlines and social media trends exists another world—one filled with extraordinary stories hidden within ordinary lives.
                 </p>
                 <div className="mot-btn-group">
-                  <button className="mot-btn mot-btn-primary">
+                  <a href="https://www.youtube.com/@Tejomarg" target="_blank" rel="noopener noreferrer" className="mot-btn mot-btn-primary" style={{ textDecoration: 'none' }}>
                     <FaPlay className="mr-2" /> Watch Stories
-                  </button>
-                  <button className="mot-btn mot-btn-outline">
+                  </a>
+                  <a href="#categories" className="mot-btn mot-btn-outline" style={{ textDecoration: 'none' }}>
                     Explore Categories
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             </div>
@@ -208,7 +207,7 @@ export default function MotivationalPage() {
         </section>
 
         {/* Stories We Cover */}
-        <section className="mot-section mot-bg-light mot-relative">
+        <section id="categories" className="mot-section mot-bg-light mot-relative">
           <div className="mot-pattern-bg"></div>
           <div className="mot-container mot-relative">
             <motion.div {...fadeInUp} className="mot-section-header text-center">
@@ -373,14 +372,13 @@ export default function MotivationalPage() {
               <p className="mot-cta-desc-small">
                 Together, let's create a platform where every voice matters, every journey is respected, and every story has the opportunity to inspire.
               </p>
-              <button className="mot-btn mot-btn-primary mot-btn-large mt-8">
+              <a href="https://wa.me/919511150925?text=नमस्ते!%20मैं%20Tejomarg%20Real%20Talk%20पर%20एक%20प्रेरणादायक%20कहानी%20साझा%20करना%20चाहता%20हूँ।" target="_blank" rel="noopener noreferrer" className="mot-btn mot-btn-primary mot-btn-large mt-8" style={{ textDecoration: 'none' }}>
                 Share a Story
-              </button>
+              </a>
             </motion.div>
           </div>
         </section>
       </div>
-      <Footer />
 
       <style jsx global>{`
         /* Pure CSS Styling for Premium Motivational Page */
@@ -412,8 +410,8 @@ export default function MotivationalPage() {
           box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .mot-floating-back-btn:hover {
-          background-color: rgba(245, 130, 32, 0.9);
-          border-color: #f58220;
+          background-color: #1e293b;
+          border-color: #0f172a;
           transform: translateY(-1px);
         }
 
@@ -447,7 +445,7 @@ export default function MotivationalPage() {
         
         .text-white { color: #ffffff; }
         .text-gray-300 { color: #d1d5db; }
-        .text-orange-400 { color: #fb923c; }
+        .text-orange-400 { color: #3b82f6; }
         .bg-white { background-color: #ffffff; }
 
         /* Premium Hero Section */
@@ -494,13 +492,13 @@ export default function MotivationalPage() {
         .mot-badge {
           display: inline-block;
           padding: 10px 22px;
-          background: rgba(245, 130, 32, 0.1);
-          color: #f58220;
+          background: rgba(59, 130, 246, 0.15);
+          color: #3b82f6;
           border-radius: 50px;
           font-weight: 600;
           font-size: 1rem;
           margin-bottom: 28px;
-          border: 1px solid rgba(245, 130, 32, 0.25);
+          border: 1px solid rgba(59, 130, 246, 0.3);
           letter-spacing: 1.5px;
           text-transform: uppercase;
         }
@@ -526,7 +524,7 @@ export default function MotivationalPage() {
         }
 
         .mot-text-gradient {
-          background: linear-gradient(to right, #f58220, #eab308);
+          background: linear-gradient(to right, #60a5fa, #3b82f6, #93c5fd);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -564,15 +562,16 @@ export default function MotivationalPage() {
         }
 
         .mot-btn-primary {
-          background-color: #f58220;
+          background-color: #3b82f6;
           color: #ffffff;
-          box-shadow: 0 10px 24px -10px rgba(245, 130, 32, 0.55);
+          box-shadow: 0 10px 24px -10px rgba(59, 130, 246, 0.55);
         }
 
         .mot-btn-primary:hover {
-          background-color: #ea580c;
+          background-color: #1d4ed8;
+          color: #ffffff;
           transform: translateY(-3px);
-          box-shadow: 0 15px 30px -10px rgba(245, 130, 32, 0.7);
+          box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.7);
         }
 
         .mot-btn-outline {
@@ -587,9 +586,9 @@ export default function MotivationalPage() {
         }
 
         .mot-btn-outline:hover {
-          background-color: rgba(245, 130, 32, 0.1);
-          color: #f58220;
-          border-color: #f58220;
+          background-color: rgba(59, 130, 246, 0.1);
+          color: #3b82f6;
+          border-color: #3b82f6;
           transform: translateY(-3px);
         }
 
@@ -723,14 +722,14 @@ export default function MotivationalPage() {
         .mot-divider {
           width: 100px;
           height: 5px;
-          background-color: #f58220;
+          background-color: #3b82f6;
           border-radius: 4px;
         }
         
         .mot-divider-left {
           width: 80px;
           height: 5px;
-          background-color: #f58220;
+          background-color: #3b82f6;
           margin-bottom: 40px;
           border-radius: 4px;
         }
@@ -780,7 +779,7 @@ export default function MotivationalPage() {
           color: #0f172a;
           line-height: 1.8;
           font-weight: 700;
-          border-left: 5px solid #f58220;
+          border-left: 5px solid #3b82f6;
           padding-left: 24px;
           margin-top: 36px;
         }
@@ -790,15 +789,15 @@ export default function MotivationalPage() {
         [data-theme="dark"] .mot-text-bold { color: #f8fafc; }
 
         .mot-highlight-box {
-          background: rgba(245, 130, 32, 0.1);
+          background: rgba(59, 130, 246, 0.08);
           padding: 28px;
           border-radius: 16px;
           margin: 40px 0;
-          border-left: 5px solid #f58220;
+          border-left: 5px solid #3b82f6;
         }
 
         .mot-highlight-box p {
-          color: #ea580c;
+          color: #3b82f6;
           font-weight: 700;
           font-size: 1.35rem;
           margin: 0;
@@ -841,7 +840,7 @@ export default function MotivationalPage() {
 
         .mot-info-icon {
           font-size: 3rem;
-          color: #f58220;
+          color: #3b82f6;
           margin-bottom: 28px;
         }
 
@@ -915,7 +914,7 @@ export default function MotivationalPage() {
         .mot-cat-icon-wrapper {
           width: 64px;
           height: 64px;
-          background: linear-gradient(135deg, #f58220 0%, #ea580c 100%);
+          background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
           border-radius: 18px;
           display: flex;
           align-items: center;
@@ -924,7 +923,7 @@ export default function MotivationalPage() {
           bottom: -32px;
           right: 28px;
           z-index: 10;
-          box-shadow: 0 6px 16px rgba(245, 130, 32, 0.35);
+          box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
           border: 2px solid #ffffff;
         }
         [data-theme="dark"] .mot-cat-icon-wrapper {
@@ -981,16 +980,16 @@ export default function MotivationalPage() {
           transition: all 0.2s ease;
         }
         .mot-cat-tag:hover {
-          background-color: rgba(245, 130, 32, 0.1);
-          color: #ea580c;
+          background-color: rgba(59, 130, 246, 0.1);
+          color: #1d4ed8;
         }
         [data-theme="dark"] .mot-cat-tag {
           background-color: #0f172a;
           color: #cbd5e1;
         }
         [data-theme="dark"] .mot-cat-tag:hover {
-          background-color: rgba(245, 130, 32, 0.15);
-          color: #fb923c;
+          background-color: rgba(59, 130, 246, 0.15);
+          color: #3b82f6;
         }
 
         /* Core Dark Cards */
@@ -1016,7 +1015,7 @@ export default function MotivationalPage() {
 
         /* Quote Section */
         .mot-quote-section {
-          background: linear-gradient(135deg, #f58220 0%, #ea580c 100%);
+          background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e3a8a 100%);
           padding: 0;
           position: relative;
         }
@@ -1045,6 +1044,7 @@ export default function MotivationalPage() {
           font-size: 3rem;
           font-weight: 800;
           margin-bottom: 28px;
+          color: white;
         }
 
         .mot-quote-main-text {
@@ -1053,23 +1053,25 @@ export default function MotivationalPage() {
           line-height: 1.45;
           margin-bottom: 28px;
           font-style: italic;
+          color: white;
         }
 
         .mot-quote-desc {
           font-size: 1.2rem;
           line-height: 1.75;
           margin-bottom: 36px;
-          opacity: 0.9;
+          opacity: 0.95;
+          color: #cbd5e1;
         }
 
         .mot-quote-highlight {
           font-size: 1.35rem;
           font-weight: 700;
-          color: #fffbeb;
-          background: rgba(0,0,0,0.1);
+          color: #ffffff;
+          background: rgba(255, 255, 255, 0.1);
           padding: 28px;
           border-radius: 16px;
-          border-left: 5px solid #fff;
+          border-left: 5px solid #3b82f6;
         }
 
         .mot-quote-image-side {
@@ -1130,9 +1132,9 @@ export default function MotivationalPage() {
         }
 
         .mot-slider-btn:hover {
-          background: #f58220;
+          background: #3b82f6;
           color: #ffffff;
-          border-color: #f58220;
+          border-color: #3b82f6;
           transform: scale(1.1);
         }
 
@@ -1228,7 +1230,7 @@ export default function MotivationalPage() {
         .mot-cta-highlight-text {
           font-size: 2.2rem;
           font-weight: 800;
-          color: #f58220;
+          color: #3b82f6;
           margin-bottom: 36px;
           font-family: 'Playfair Display', serif;
         }

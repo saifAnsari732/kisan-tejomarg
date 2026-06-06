@@ -85,7 +85,7 @@ export default function ConnectModal({ isOpen, onClose }) {
                     
                     <div className="cm-card-content">
                       <div className="cm-icon-box cm-icon-orange">
-                        <img src="/realTalk/realtalkLogo.png" alt="Real Talk" style={{ width: '46px', height: '46px', objectFit: 'contain' }} />
+                        <img src="/realTalk/realtalkLogo.png" alt="Real Talk" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
                       </div>
                       
                       <h3>{mt.motivational_title}</h3>
@@ -108,8 +108,7 @@ export default function ConnectModal({ isOpen, onClose }) {
                     
                     <div className="cm-card-content">
                       <div className="cm-icon-box cm-icon-blue">
-                     <img src="/business/logo.webp" alt="Real Talk" style={{ width: '46px', height: '46px', objectFit: 'contain' }} />
-
+                        <img src="/business/logo.webp" alt="Real Talk" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
                       </div>
                       
                       <h3>{mt.businesses_title}</h3>
@@ -393,12 +392,14 @@ export default function ConnectModal({ isOpen, onClose }) {
 
             /* Icons */
             .cm-icon-box {
-              width: 64px;
-              height: 64px;
-              border-radius: 20px;
+              width: 110px;
+              height: 110px;
+              border-radius: 28px;
               display: flex;
               align-items: center;
               justify-content: center;
+              margin-left: auto;
+              margin-right: auto;
               margin-bottom: 24px;
               transition: transform 0.3s ease;
             }

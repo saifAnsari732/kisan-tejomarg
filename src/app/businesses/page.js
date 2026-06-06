@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { 
+import {
   Megaphone, Rocket, Target, LineChart,
   CheckCircle2, Users, ShieldCheck, Quote
 } from 'lucide-react';
-import Footer from '../../components/Footer';
 
 export default function BusinessesPage() {
   const fadeInUp = {
@@ -50,11 +49,11 @@ export default function BusinessesPage() {
   ];
 
   const industries = [
-    "Retail & E-Commerce", "Real Estate", "Healthcare & HealthTech", 
-    "Education & EdTech", "Agriculture & AgriTech", "Manufacturing", 
-    "Travel & Hospitality", "Infrastructure & Construction", 
-    "Energy & Sustainability", "FMCG & Consumer Brands", 
-    "Logistics & Supply Chain", "Automobile Industry", "FinTech", 
+    "Retail & E-Commerce", "Real Estate", "Healthcare & HealthTech",
+    "Education & EdTech", "Agriculture & AgriTech", "Manufacturing",
+    "Travel & Hospitality", "Infrastructure & Construction",
+    "Energy & Sustainability", "FMCG & Consumer Brands",
+    "Logistics & Supply Chain", "Automobile Industry", "FinTech",
     "Media & Entertainment", "Sports Business", "Government & Public Sector"
   ];
 
@@ -93,11 +92,11 @@ export default function BusinessesPage() {
                   In today’s rapidly evolving business landscape, success is driven by informed decisions, strategic thinking, innovation, and adaptability.
                 </p>
                 <div className="biz-hero-actions">
-                  <button className="biz-btn-primary">Explore Insights</button>
-                  <a 
-                    href="https://wa.me/919511150925?text=नमस्ते! मुझे Tejomarg के बारे में अधिक जानकारी चाहिए।" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a href="#insights" className="biz-btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>Explore Insights</a>
+                  <a
+                    href="https://wa.me/919511150925?text=नमस्ते! मुझे Tejomarg के बारे में अधिक जानकारी चाहिए।"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="biz-btn-outline"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
                   >
@@ -105,7 +104,7 @@ export default function BusinessesPage() {
                   </a>
                 </div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
@@ -141,7 +140,7 @@ export default function BusinessesPage() {
               {/* Ladder Stack (Matches screenshot style) */}
               <div className="biz-screenshot-ladder">
                 {ladderSteps.map((step, idx) => (
-                  <motion.div 
+                  <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -161,8 +160,8 @@ export default function BusinessesPage() {
             </div>
 
             {/* Stats Bar */}
-            <motion.div {...fadeInUp} className="biz-stats-bar">
-              <div className="biz-stats-grid">
+            <motion.div {...fadeInUp} className="biz-stats-bar" style={{ marginLeft: "62px" }}>
+              <div className="biz-stats-grid "  >
                 <div className="biz-stat-item">
                   <Users size={28} />
                   <div>
@@ -186,7 +185,9 @@ export default function BusinessesPage() {
                 </div>
               </div>
               <div className="biz-stat-btn-wrap">
-                <button className="biz-btn-cyan">Ready To Start Your Project</button>
+                <a href="https://wa.me/919511150925?text=नमस्ते!%20मैं%20अपने%20व्यवसाय/परियोजना%20के%20लिए%20Tejomarg%20Business%20के%20साथ%20काम%20करना%20चाहता%20हूँ।" target="_blank" rel="noopener noreferrer" className="biz-btn-cyan" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                  Ready To Start Your Project
+                </a>
               </div>
             </motion.div>
 
@@ -194,18 +195,18 @@ export default function BusinessesPage() {
         </section>
 
         {/* What We Cover Section (Converted to top-down layout) */}
-        <section className="biz-section">
-          <div className="biz-container">
-            <motion.div {...fadeInUp} className="biz-cover-topdown-header">
+        <section id="insights" className="biz-section ">
+          <div className="biz-container ">
+            <motion.div {...fadeInUp} className="biz-cover-topdown-header text-center ">
               <span className="biz-small-label centered">What We Cover</span>
-              <h2 className="biz-cover-topdown-heading">
+              <h2 className="biz-cover-topdown-heading !mb-8">
                 From marketing strategies to financial insights, we provide comprehensive resources for your business growth.
               </h2>
             </motion.div>
-            
-            <div className="biz-cover-grid">
+
+            <div className="biz-cover-grid ">
               {coverages.map((item, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -225,7 +226,7 @@ export default function BusinessesPage() {
               ))}
             </div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -241,7 +242,7 @@ export default function BusinessesPage() {
         <section className="biz-section">
           <div className="biz-container">
             <div className="biz-cover-split reverse">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -249,7 +250,7 @@ export default function BusinessesPage() {
               >
                 <img src="/business/signing.webp" alt="Business Signing" className="biz-cover-main-img" />
               </motion.div>
-              
+
               <div className="biz-cover-right">
                 <span className="biz-small-label">Target Markets</span>
                 <h2 className="biz-cover-heading">
@@ -270,22 +271,22 @@ export default function BusinessesPage() {
         {/* Testimonials Section */}
         <section className="biz-section">
           <div className="biz-container">
-            <motion.div {...fadeInUp} className="biz-center-header">
+            <motion.div {...fadeInUp} className="biz-center-header text-center ">
               <span className="biz-small-label centered">Testimonials</span>
               <h2 className="biz-section-title">What People Say About Tejomarg Business Info</h2>
-              <p className="biz-section-subtitle">
+              <p className="biz-section-subtitle !py-4 !mb-6">
                 At Tejomarg, we measure our success through the growth, trust, and positive impact we create for businesses, entrepreneurs, professionals, and organizations.
               </p>
             </motion.div>
 
-            <motion.div 
-              variants={staggerContainer} 
-              initial="initial" 
-              whileInView="whileInView" 
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="whileInView"
               className="biz-testimonials-grid"
             >
               {testimonials.map((testi, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   variants={fadeInUp}
                   whileHover={{ y: -8 }}
@@ -331,7 +332,7 @@ export default function BusinessesPage() {
         <section className="biz-section">
           <div className="biz-container">
             <div className="biz-cover-split">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -339,7 +340,7 @@ export default function BusinessesPage() {
               >
                 <img src="/business/handshake.webp" alt="Handshake Collaboration" className="biz-cover-main-img" />
               </motion.div>
-              
+
               <div className="biz-cover-right">
                 <span className="biz-small-label">Our Community</span>
                 <h2 className="biz-cover-heading">
@@ -368,8 +369,6 @@ export default function BusinessesPage() {
           </div>
         </section>
       </div>
-
-      <Footer />
 
       <style jsx>{`
         /* Global page layout using system's theme background */
