@@ -9,9 +9,9 @@ const modalTranslations = {
   en: {
     title: "Choose Your Journey",
     subtitle: "Select the category that best matches your interests and explore our curated content",
-    motivational_title: "Motivational",
+    motivational_title: "Real Talk",
     motivational_desc: "Stories, inspiration, success journeys, life lessons, self-growth content, leadership talks, and motivational videos to ignite your inner flame.",
-    motivational_btn: "Explore Motivation",
+    motivational_btn: "Explore Real Talk",
     businesses_title: "Businesses",
     businesses_desc: "Entrepreneurship, startup stories, business strategies, marketing insights, finance, innovation, and industry trends to build your enterprise.",
     businesses_btn: "Explore Business"
@@ -30,7 +30,7 @@ const modalTranslations = {
 
 export default function ConnectModal({ isOpen, onClose }) {
   const { language } = useLanguage();
-  const mt = modalTranslations[language] || modalTranslations.en;
+  const mt = modalTranslations.en; // Force English
 
   if (!isOpen) return null;
 
@@ -85,7 +85,7 @@ export default function ConnectModal({ isOpen, onClose }) {
                     
                     <div className="cm-card-content">
                       <div className="cm-icon-box cm-icon-orange">
-                        <Rocket size={28} strokeWidth={2.2} />
+                        <img src="/realTalk/realtalkLogo.png" alt="Real Talk" style={{ width: '46px', height: '46px', objectFit: 'contain' }} />
                       </div>
                       
                       <h3>{mt.motivational_title}</h3>
@@ -108,7 +108,8 @@ export default function ConnectModal({ isOpen, onClose }) {
                     
                     <div className="cm-card-content">
                       <div className="cm-icon-box cm-icon-blue">
-                        <Briefcase size={28} strokeWidth={2.2} />
+                     <img src="/business/logo.webp" alt="Real Talk" style={{ width: '46px', height: '46px', objectFit: 'contain' }} />
+
                       </div>
                       
                       <h3>{mt.businesses_title}</h3>

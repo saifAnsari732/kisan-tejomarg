@@ -51,7 +51,7 @@ export default function Hero() {
           </div>
 
           {/* टाइटल यहाँ है */}
-            <p className='text-7xl font-semibold text-white '>तेजोमार्ग</p>
+            <p className='text-7xl md:text-8xl font-black text-white tracking-widest' style={{ textShadow: '0 4px 25px rgba(231, 68, 9, 0.5)', fontFamily: 'serif' }}>तेजोमार्ग</p>
           <h1 className="hero-main-title">
             {t.title}
           </h1>
@@ -133,44 +133,46 @@ export default function Hero() {
         
         .hero-main-title {
           font-family: "Playfair Display", serif;
-          // font-size: clamp(2.2rem, 6vw, 4.8rem);
-          font-weight: 800;
-          line-height: 1.2;
-          margin-bottom: 1.5rem;
-          transition: color 0.4s ease;
-           padding-top: 30px;
-          /* लाइट मोड में Yellow */
-          // color: #ff9f00; 
-          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+          font-size: clamp(2.8rem, 8.5vw, 6rem);
+          font-weight: 900;
+          line-height: 1.15;
+          margin-bottom: 1.8rem;
+          transition: all 0.4s ease;
+          padding-top: 15px;
+          color: #ff9f00; 
+          text-shadow: 3px 5px 20px rgba(0, 0, 0, 0.7);
         }
 
         /* डार्क मोड में Red */
         :global([data-theme="dark"]) .hero-main-title {
-          color: #FF3131;
-          text-shadow: 0 0 20px rgba(255, 49, 49, 0.4);
+          color: #ff3333;
+          text-shadow: 0 0 30px rgba(255, 51, 51, 0.6);
         }
 
         /* ----------------------- */
 
         .divine-badge {
           display: inline-block;
-          background: rgba(255, 123, 0, 0.2);
+          background: linear-gradient(135deg, rgba(255, 69, 0, 0.25) 0%, rgba(255, 140, 0, 0.25) 100%);
           backdrop-filter: blur(8px);
-          color: #ffcc80;
-          padding: 8px 25px;
+          color: #ffe0b2;
+          padding: 10px 30px;
           border-radius: 50px;
           font-weight: 700;
-          border: 1px solid rgba(255, 204, 128, 0.3);
-          margin-bottom: 2rem;
+          font-size: 1.1rem;
+          border: 1px solid rgba(255, 204, 128, 0.4);
+          margin-bottom: 2.5rem;
+          letter-spacing: 1.5px;
+          box-shadow: 0 4px 15px rgba(255, 69, 0, 0.15);
         }
 
         .hero-description {
-          font-size: 1.25rem;
+          font-size: 1.45rem;
           color: #ffffff;
-          max-width: 800px;
-          margin: 0 auto 3rem auto;
-          line-height: 1.6;
-          text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+          max-width: 900px;
+          margin: 0 auto 3.5rem auto;
+          line-height: 1.65;
+          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.95);
         }
 
         /* Hero buttons styling handled by Tailwind CSS */

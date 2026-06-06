@@ -41,7 +41,7 @@ export default function Footer() {
                 <span className="social-icon">📺</span>
                 <span>YouTube</span>
               </a>
-              <a href="https://www.instagram.com/tejomarg/" target="_blank" rel="noopener noreferrer" className="social-item">
+              <a href="https://www.instagram.com/5starlaptopadda/" target="_blank" rel="noopener noreferrer" className="social-item">
                 <span className="social-icon">📸</span>
                 <span>Instagram</span>
               </a>

@@ -51,7 +51,7 @@ export default function ContactPage() {
 
   const socialLinks = [
     { name: 'YouTube', icon: FaYoutube, url: 'https://youtube.com' },
-    { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com' },
+    { name: 'Instagram', icon: FaInstagram, url: 'https://www.instagram.com/5starlaptopadda/' },
     { name: 'Email', icon: HiOutlineMail, url: 'mailto:tejomarg9@gmail.com' },
   ];
 
@@ -188,7 +188,7 @@ export default function ContactPage() {
                     </div>
                     <div className="contact-details">
                       <p className="contact-label">फोन</p>
-                      <a href="tel:+919511150925">+91 95111 50925</a>
+                      <a href="tel:+919450422087">+91 94504 22087</a>
                     </div>
                   </div>
 
@@ -198,7 +198,7 @@ export default function ContactPage() {
                     </div>
                     <div className="contact-details">
                       <p className="contact-label">स्थान</p>
-                      <p>Alambag lucknow uttar pradesh</p>
+                      <p>नौका विहार के सामने ताल बाज़ार के अंदर</p>
                     </div>
                   </div>
                 </div>

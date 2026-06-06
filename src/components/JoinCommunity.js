@@ -9,7 +9,7 @@ export default function JoinCommunity() {
 
   const socials = [
     { name: "YouTube", url: "https://www.youtube.com/@Tejomarg", icon: "youtube", color: "#FF0000" },
-    { name: "Instagram", url: "https://www.instagram.com/tejomarg/", icon: "instagram", color: "#E4405F" },
+    { name: "Instagram", url: "https://www.instagram.com/5starlaptopadda/", icon: "instagram", color: "#E4405F" },
     { name: "Facebook", url: "https://www.facebook.com/tejomarg/", icon: "facebook", color: "#1877F2" },
     { name: "Twitter", url: "https://x.com/tejomarg", icon: "twitter", color: "#1DA1F2" },
     { name: "Pinterest", url: "https://in.pinterest.com/tejomarg/", icon: "pinterest", color: "#BD081C" },

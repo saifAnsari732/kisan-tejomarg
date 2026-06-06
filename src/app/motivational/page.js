@@ -38,11 +38,41 @@ export default function MotivationalPage() {
   };
 
   const storiesCategories = [
-    { title: "Everyday Heroes", subtitle: "The backbone of every city, town, and village.", list: ["Auto and taxi drivers", "Rickshaw pullers", "Street vendors", "Tea stall owners", "Food cart operators", "Delivery partners", "Shopkeepers", "Small traders", "Skilled workers"], icon: <FaUsers /> },
-    { title: "Entrepreneurs & Small Business", subtitle: "The dreamers and builders of local economies.", list: ["Startup founders", "Small business owners", "Family-run businesses", "Independent professionals", "Local entrepreneurs", "Self-made business leaders"], icon: <FaBriefcase /> },
-    { title: "Rural India & Traditional", subtitle: "The voices that represent India's roots and traditions.", list: ["Farmers", "Artisans", "Craftsmen", "Village entrepreneurs", "Traditional workers", "Rural innovators"], icon: <FaSeedling /> },
-    { title: "Change Makers & Leaders", subtitle: "Individuals making a positive impact in society.", list: ["Teachers", "Social workers", "Volunteers", "Community organizers", "Youth leaders", "Grassroots innovators"], icon: <FaHandshake /> },
-    { title: "Courage & Transformation", subtitle: "Life-changing journeys that inspire hope.", list: ["People overcoming adversity", "Financial struggle to success", "Personal transformation", "Resilience and perseverance", "Inspirational life experiences"], icon: <FaStar /> }
+    { 
+      title: "Everyday Heroes", 
+      subtitle: "The backbone of every city, town, and village.", 
+      list: ["Auto and taxi drivers", "Rickshaw pullers", "Street vendors", "Tea stall owners", "Food cart operators", "Delivery partners", "Shopkeepers", "Small traders", "Skilled workers"], 
+      icon: <FaUsers />,
+      image: "/realTalk/Filmmaker_interviewing_auto_rick…_202606061124.jpeg"
+    },
+    { 
+      title: "Entrepreneurs & Small Business", 
+      subtitle: "The dreamers and builders of local economies.", 
+      list: ["Startup founders", "Small business owners", "Family-run businesses", "Independent professionals", "Local entrepreneurs", "Self-made business leaders"], 
+      icon: <FaBriefcase />,
+      image: "/realTalk/Business_podcast_set_with_owner_202606061132.jpeg"
+    },
+    { 
+      title: "Rural India & Traditional", 
+      subtitle: "The voices that represent India's roots and traditions.", 
+      list: ["Farmers", "Artisans", "Craftsmen", "Village entrepreneurs", "Traditional workers", "Rural innovators"], 
+      icon: <FaSeedling />,
+      image: "/realTalk/Farmer_discussing_life_experienc…_202606061134.jpeg"
+    },
+    { 
+      title: "Change Makers & Leaders", 
+      subtitle: "Individuals making a positive impact in society.", 
+      list: ["Teachers", "Social workers", "Volunteers", "Community organizers", "Youth leaders", "Grassroots innovators"], 
+      icon: <FaHandshake />,
+      image: "/realTalk/Teacher_and_social_worker_interv…_202606061135.jpeg"
+    },
+    { 
+      title: "Courage & Transformation", 
+      subtitle: "Life-changing journeys that inspire hope.", 
+      list: ["People overcoming adversity", "Financial struggle to success", "Personal transformation", "Resilience and perseverance", "Inspirational life experiences"], 
+      icon: <FaStar />,
+      image: "/realTalk/Guests_in_Tejomarg_Real_Talk_202606061130.jpeg"
+    }
   ];
 
   const testimonials = [
@@ -55,8 +85,10 @@ export default function MotivationalPage() {
 
   return (
     <>
-      <Navbar />
       <div className="mot-page">
+        {/* Floating Back Button */}
+        <Link href="/" className="mot-floating-back-btn">Back to Home</Link>
+
         {/* Premium Hero Section */}
         <section className="mot-hero">
           <div className="mot-hero-bg"></div>
@@ -72,14 +104,14 @@ export default function MotivationalPage() {
               >
                 <div className="mot-hero-collage">
                   <div className="mot-collage-main">
-                    <Image src="/images/resilience_thumb.webp" alt="Resilience" fill style={{ objectFit: 'cover' }} className="mot-rounded-img shadow-xl" priority />
+                    <Image src="/realTalk/Guests_in_Tejomarg_Real_Talk_202606061130.jpeg" alt="Real Talk Guests" fill style={{ objectFit: 'cover' }} className="mot-rounded-img shadow-xl" priority />
                   </div>
                   <div className="mot-collage-side">
                     <div className="mot-collage-img">
-                      <Image src="/images/focus_thumb.webp" alt="Focus" fill style={{ objectFit: 'cover' }} className="mot-rounded-img shadow-lg" priority />
+                      <Image src="/realTalk/Podcast_studio_diverse_Indian_gu…_202606061135.jpeg" alt="Podcast Studio Guests" fill style={{ objectFit: 'cover' }} className="mot-rounded-img shadow-lg" priority />
                     </div>
                     <div className="mot-collage-img">
-                      <Image src="/images/inner_peace_thumb.webp" alt="Inner Peace" fill style={{ objectFit: 'cover' }} className="mot-rounded-img shadow-lg" priority />
+                      <Image src="/realTalk/Diverse_Indian_people_standing_t…_202606061114.jpeg" alt="Diverse Indian People" fill style={{ objectFit: 'cover' }} className="mot-rounded-img shadow-lg" priority />
                     </div>
                   </div>
                   
@@ -123,7 +155,7 @@ export default function MotivationalPage() {
           </div>
         </section>
 
-        {/* The Untold Stories Section (Moved text from hero to here) */}
+        {/* The Untold Stories Section */}
         <section className="mot-section mot-bg-light">
           <div className="mot-container">
             <div className="mot-split-grid">
@@ -131,7 +163,7 @@ export default function MotivationalPage() {
                 {...fadeInUp}
                 className="mot-split-image"
               >
-                <Image src="/images/sadhu.webp" alt="Authentic Stories" fill style={{ objectFit: 'cover' }} className="rounded-3xl shadow-xl" />
+                <Image src="/realTalk/Diverse_Indian_people_standing_t…_202606061114.jpeg" alt="Authentic Stories Community" fill style={{ objectFit: 'cover' }} className="rounded-3xl shadow-xl" />
               </motion.div>
               
               <motion.div 
@@ -198,19 +230,23 @@ export default function MotivationalPage() {
                   variants={fadeInUp}
                   className="mot-cat-card"
                 >
-                  <div className="mot-cat-icon-wrapper">
-                    <div className="mot-cat-icon">{cat.icon}</div>
+                  <div className="mot-cat-image-wrap">
+                    <img src={cat.image} alt={cat.title} className="mot-cat-img" />
+                    <div className="mot-cat-icon-wrapper">
+                      <div className="mot-cat-icon">{cat.icon}</div>
+                    </div>
                   </div>
-                  <h3>{cat.title}</h3>
-                  <p className="mot-cat-subtitle">{cat.subtitle}</p>
-                  <ul className="mot-cat-list">
-                    {cat.list.map((item, i) => (
-                      <li key={i}>
-                        <span className="mot-list-bullet"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mot-cat-body">
+                    <h3>{cat.title}</h3>
+                    <p className="mot-cat-subtitle">{cat.subtitle}</p>
+                    <div className="mot-cat-tags">
+                      {cat.list.map((item, i) => (
+                        <span key={i} className="mot-cat-tag">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -273,7 +309,7 @@ export default function MotivationalPage() {
               </motion.div>
               <motion.div {...fadeInUp} className="mot-quote-image-side">
                 <div className="mot-image-wrapper">
-                  <Image src="/images/team.webp" alt="Impact" fill style={{ objectFit: 'cover' }} className="rounded-3xl shadow-2xl" />
+                  <Image src="/realTalk/Podcast_studio_diverse_Indian_gu…_202606061135.jpeg" alt="Impact" fill style={{ objectFit: 'cover' }} className="rounded-3xl shadow-2xl" />
                 </div>
               </motion.div>
             </div>
@@ -353,7 +389,32 @@ export default function MotivationalPage() {
           background-color: #f8fafc;
           color: #1e293b;
           min-height: 100vh;
-          padding-top: 80px; /* Navbar offset */
+          padding-top: 0;
+          position: relative;
+        }
+
+        /* Floating Back Button */
+        .mot-floating-back-btn {
+          position: absolute;
+          top: 24px;
+          right: 24px;
+          z-index: 100;
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          background: rgba(15, 23, 42, 0.4);
+          backdrop-filter: blur(8px);
+          padding: 10px 22px;
+          border-radius: 20px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 14px;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .mot-floating-back-btn:hover {
+          background-color: rgba(245, 130, 32, 0.9);
+          border-color: #f58220;
+          transform: translateY(-1px);
         }
 
         [data-theme="dark"] .mot-page {
@@ -362,9 +423,9 @@ export default function MotivationalPage() {
         }
 
         .mot-container {
-          max-width: 1280px;
+          max-width: 1440px;
           margin: 0 auto;
-          padding: 0 24px;
+          padding: 0 32px;
         }
 
         .mot-relative {
@@ -374,15 +435,15 @@ export default function MotivationalPage() {
 
         .text-center { text-align: center; }
         .mx-auto { margin-left: auto; margin-right: auto; }
-        .mt-4 { margin-top: 1rem; }
-        .mt-8 { margin-top: 2rem; }
-        .mr-2 { margin-right: 0.5rem; }
+        .mt-4 { margin-top: 1.25rem; }
+        .mt-8 { margin-top: 2.5rem; }
+        .mr-2 { margin-right: 0.75rem; }
         .flex { display: flex; }
         .items-center { align-items: center; }
         .items-start { align-items: flex-start; }
-        .gap-4 { gap: 1rem; }
-        .space-y-2 > * + * { margin-top: 0.5rem; }
-        .space-y-3 > * + * { margin-top: 0.75rem; }
+        .gap-4 { gap: 1.25rem; }
+        .space-y-2 > * + * { margin-top: 0.75rem; }
+        .space-y-3 > * + * { margin-top: 1rem; }
         
         .text-white { color: #ffffff; }
         .text-gray-300 { color: #d1d5db; }
@@ -392,17 +453,17 @@ export default function MotivationalPage() {
         /* Premium Hero Section */
         .mot-hero {
           position: relative;
-          min-height: 90vh;
+          min-height: 95vh;
           display: flex;
           align-items: center;
-          padding: 60px 0;
+          padding: 80px 0;
           overflow: hidden;
         }
 
         .mot-hero-bg {
           position: absolute;
           inset: 0;
-          background-color: #f8fafc;
+          background: linear-gradient(135deg, #020617 0%, #0f172a 40%, #1e3a8a 100%);
           z-index: 0;
         }
 
@@ -417,7 +478,7 @@ export default function MotivationalPage() {
         .mot-hero-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 40px;
+          gap: 60px;
           align-items: center;
           z-index: 2;
           position: relative;
@@ -425,39 +486,39 @@ export default function MotivationalPage() {
 
         @media (min-width: 1024px) {
           .mot-hero-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
           }
         }
 
         .mot-badge {
           display: inline-block;
-          padding: 8px 16px;
+          padding: 10px 22px;
           background: rgba(245, 130, 32, 0.1);
           color: #f58220;
           border-radius: 50px;
           font-weight: 600;
-          font-size: 0.875rem;
-          margin-bottom: 24px;
-          border: 1px solid rgba(245, 130, 32, 0.2);
-          letter-spacing: 1px;
+          font-size: 1rem;
+          margin-bottom: 28px;
+          border: 1px solid rgba(245, 130, 32, 0.25);
+          letter-spacing: 1.5px;
           text-transform: uppercase;
         }
 
         .mot-title {
           font-family: 'Playfair Display', serif;
-          font-size: 3.5rem;
-          font-weight: 800;
-          line-height: 1.1;
-          margin-bottom: 24px;
-          color: #0f172a;
+          font-size: clamp(2.6rem, 6vw, 4.2rem);
+          font-weight: 900;
+          line-height: 1.15;
+          margin-bottom: 28px;
+          color: #ffffff;
         }
 
         @media (min-width: 768px) {
-          .mot-title { font-size: 4.5rem; }
+          .mot-title { font-size: clamp(3.2rem, 7vw, 4.8rem); }
         }
         @media (min-width: 1024px) {
-          .mot-title { font-size: 5rem; }
+          .mot-title { font-size: clamp(3.8rem, 7.5vw, 5.5rem); }
         }
 
         [data-theme="dark"] .mot-title {
@@ -471,11 +532,11 @@ export default function MotivationalPage() {
         }
 
         .mot-hero-desc {
-          font-size: 1.125rem;
-          color: #475569;
-          line-height: 1.8;
-          margin-bottom: 40px;
-          max-width: 600px;
+          font-size: 1.35rem;
+          color: #cbd5e1;
+          line-height: 1.85;
+          margin-bottom: 48px;
+          max-width: 720px;
         }
 
         [data-theme="dark"] .mot-hero-desc {
@@ -485,19 +546,19 @@ export default function MotivationalPage() {
         .mot-btn-group {
           display: flex;
           flex-wrap: wrap;
-          gap: 16px;
+          gap: 20px;
         }
 
         .mot-btn {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 16px 32px;
+          padding: 20px 42px;
           border-radius: 50px;
           font-weight: 700;
-          font-size: 1rem;
+          font-size: 1.15rem;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           border: none;
           font-family: 'Inter', sans-serif;
         }
@@ -505,18 +566,18 @@ export default function MotivationalPage() {
         .mot-btn-primary {
           background-color: #f58220;
           color: #ffffff;
-          box-shadow: 0 10px 20px -10px rgba(245, 130, 32, 0.5);
+          box-shadow: 0 10px 24px -10px rgba(245, 130, 32, 0.55);
         }
 
         .mot-btn-primary:hover {
           background-color: #ea580c;
-          transform: translateY(-2px);
-          box-shadow: 0 15px 25px -10px rgba(245, 130, 32, 0.6);
+          transform: translateY(-3px);
+          box-shadow: 0 15px 30px -10px rgba(245, 130, 32, 0.7);
         }
 
         .mot-btn-outline {
           background-color: transparent;
-          color: #0f172a;
+          color: #ffffff;
           border: 2px solid #cbd5e1;
         }
 
@@ -529,26 +590,27 @@ export default function MotivationalPage() {
           background-color: rgba(245, 130, 32, 0.1);
           color: #f58220;
           border-color: #f58220;
+          transform: translateY(-3px);
         }
 
         .mot-hero-visual {
           position: relative;
           height: 100%;
-          min-height: 400px;
+          min-height: 520px;
           width: 100%;
           display: block;
         }
         
         .mot-hero-collage {
           display: flex;
-          gap: 16px;
-          height: 500px;
+          gap: 24px;
+          height: 680px;
           width: 100%;
           position: relative;
         }
 
         .mot-collage-main {
-          flex: 2;
+          flex: 2.2;
           position: relative;
           height: 100%;
         }
@@ -557,7 +619,7 @@ export default function MotivationalPage() {
           flex: 1;
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 20px;
           height: 100%;
         }
 
@@ -568,50 +630,50 @@ export default function MotivationalPage() {
         }
         
         .mot-rounded-img {
-          border-radius: 24px;
+          border-radius: 28px;
         }
         
         @media (max-width: 768px) {
           .mot-hero-collage {
-            height: 350px;
+            height: 420px;
           }
         }
 
         .mot-image-glass-card {
           position: absolute;
-          bottom: -20px;
-          left: -20px;
-          background: rgba(255, 255, 255, 0.85);
-          backdrop-filter: blur(12px);
-          padding: 20px 24px;
-          border-radius: 20px;
-          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-          border: 1px solid rgba(255,255,255,0.5);
+          bottom: -24px;
+          left: -24px;
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(16px);
+          padding: 24px 30px;
+          border-radius: 24px;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+          border: 1px solid rgba(255,255,255,0.6);
           z-index: 10;
         }
 
         [data-theme="dark"] .mot-image-glass-card {
-          background: rgba(30, 41, 59, 0.85);
-          border-color: rgba(255,255,255,0.1);
+          background: rgba(30, 41, 59, 0.9);
+          border-color: rgba(255,255,255,0.15);
         }
 
         .mot-glass-icon {
-          width: 48px;
-          height: 48px;
+          width: 54px;
+          height: 54px;
           background: #fff;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.5rem;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+          font-size: 1.75rem;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
 
         [data-theme="dark"] .mot-glass-icon { background: #0f172a; }
 
         .mot-glass-title {
           font-weight: 800;
-          font-size: 1.25rem;
+          font-size: 1.4rem;
           color: #0f172a;
           margin: 0;
         }
@@ -620,12 +682,12 @@ export default function MotivationalPage() {
 
         .mot-glass-desc {
           color: #64748b;
-          font-size: 0.875rem;
+          font-size: 0.95rem;
           margin: 0;
         }
 
         /* Generic Section */
-        .mot-section { padding: 96px 0; }
+        .mot-section { padding: 120px 0; }
         
         .mot-bg-white { background-color: #ffffff; }
         [data-theme="dark"] .mot-bg-white { background-color: #1e293b; }
@@ -636,40 +698,40 @@ export default function MotivationalPage() {
         .mot-bg-dark { background-color: #0f172a; }
         [data-theme="dark"] .mot-bg-dark { background-color: #020617; }
 
-        .mot-section-header { margin-bottom: 64px; }
+        .mot-section-header { margin-bottom: 80px; }
 
         .mot-section-title {
           font-family: 'Playfair Display', serif;
-          font-size: 2.5rem;
+          font-size: 2.8rem;
           font-weight: 800;
           color: #0f172a;
-          margin-bottom: 16px;
+          margin-bottom: 20px;
         }
 
         @media (min-width: 768px) {
-          .mot-section-title { font-size: 3rem; }
+          .mot-section-title { font-size: 3.5rem; }
         }
 
         [data-theme="dark"] .mot-section-title { color: #ffffff; }
 
         .mot-section-subtitle {
-          font-size: 1.125rem;
+          font-size: 1.25rem;
           color: #64748b;
-          margin-top: 16px;
+          margin-top: 20px;
         }
 
         .mot-divider {
-          width: 80px;
-          height: 4px;
+          width: 100px;
+          height: 5px;
           background-color: #f58220;
           border-radius: 4px;
         }
         
         .mot-divider-left {
-          width: 64px;
-          height: 4px;
+          width: 80px;
+          height: 5px;
           background-color: #f58220;
-          margin-bottom: 32px;
+          margin-bottom: 40px;
           border-radius: 4px;
         }
 
@@ -677,7 +739,7 @@ export default function MotivationalPage() {
         .mot-split-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 64px;
+          gap: 80px;
           align-items: center;
         }
 
@@ -689,7 +751,7 @@ export default function MotivationalPage() {
 
         .mot-split-image {
           position: relative;
-          height: 600px;
+          height: 680px;
           width: 100%;
         }
         
@@ -700,27 +762,27 @@ export default function MotivationalPage() {
         }
 
         .mot-text-lg {
-          font-size: 1.25rem;
+          font-size: 1.35rem;
           color: #334155;
-          line-height: 1.7;
-          margin-bottom: 24px;
+          line-height: 1.8;
+          margin-bottom: 28px;
         }
         
         .mot-text-base {
-          font-size: 1.05rem;
+          font-size: 1.15rem;
           color: #475569;
-          line-height: 1.7;
-          margin-bottom: 24px;
+          line-height: 1.8;
+          margin-bottom: 28px;
         }
 
         .mot-text-bold {
-          font-size: 1.125rem;
+          font-size: 1.25rem;
           color: #0f172a;
-          line-height: 1.7;
+          line-height: 1.8;
           font-weight: 700;
-          border-left: 4px solid #f58220;
-          padding-left: 20px;
-          margin-top: 32px;
+          border-left: 5px solid #f58220;
+          padding-left: 24px;
+          margin-top: 36px;
         }
 
         [data-theme="dark"] .mot-text-lg,
@@ -729,16 +791,16 @@ export default function MotivationalPage() {
 
         .mot-highlight-box {
           background: rgba(245, 130, 32, 0.1);
-          padding: 24px;
-          border-radius: 12px;
-          margin: 32px 0;
-          border-left: 4px solid #f58220;
+          padding: 28px;
+          border-radius: 16px;
+          margin: 40px 0;
+          border-left: 5px solid #f58220;
         }
 
         .mot-highlight-box p {
           color: #ea580c;
           font-weight: 700;
-          font-size: 1.25rem;
+          font-size: 1.35rem;
           margin: 0;
         }
 
@@ -746,22 +808,22 @@ export default function MotivationalPage() {
         .mot-grid-2 {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 40px;
+          gap: 60px;
         }
         @media (min-width: 768px) { .mot-grid-2 { grid-template-columns: 1fr 1fr; } }
 
         .mot-grid-3 {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 32px;
+          gap: 48px;
         }
         @media (min-width: 768px) { .mot-grid-3 { grid-template-columns: repeat(3, 1fr); } }
 
         /* Cards */
         .mot-info-card {
           background: #f8fafc;
-          padding: 48px;
-          border-radius: 24px;
+          padding: 56px;
+          border-radius: 32px;
           border: 1px solid #f1f5f9;
         }
         [data-theme="dark"] .mot-info-card {
@@ -778,25 +840,25 @@ export default function MotivationalPage() {
         }
 
         .mot-info-icon {
-          font-size: 2.5rem;
+          font-size: 3rem;
           color: #f58220;
-          margin-bottom: 24px;
+          margin-bottom: 28px;
         }
 
         .mot-info-card h3 {
           font-family: 'Playfair Display', serif;
-          font-size: 2rem;
+          font-size: 2.2rem;
           font-weight: 700;
-          margin-bottom: 20px;
+          margin-bottom: 24px;
           color: #0f172a;
         }
         [data-theme="dark"] .mot-info-card h3 { color: #f8fafc; }
 
         .mot-info-card p {
           color: #475569;
-          line-height: 1.7;
-          margin-bottom: 16px;
-          font-size: 1.125rem;
+          line-height: 1.75;
+          margin-bottom: 20px;
+          font-size: 1.2rem;
         }
         [data-theme="dark"] .mot-info-card p { color: #cbd5e1; }
 
@@ -804,112 +866,152 @@ export default function MotivationalPage() {
         .mot-categories-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 24px;
+          gap: 40px;
         }
         @media (min-width: 768px) { .mot-categories-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .mot-categories-grid { grid-template-columns: repeat(3, 1fr); } }
 
         .mot-cat-card {
           background-color: #ffffff;
-          padding: 40px 32px;
-          border-radius: 24px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+          border-radius: 28px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.04);
           border: 1px solid #f1f5f9;
-          transition: all 0.3s ease;
+          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
           overflow: hidden;
+          display: flex;
+          flex-direction: column;
         }
         
-        .mot-cat-card::before {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; right: 0; height: 4px;
-          background: #f58220;
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.3s ease;
-        }
-
-        .mot-cat-card:hover::before { transform: scaleX(1); }
         .mot-cat-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+          box-shadow: 0 20px 45px rgba(0,0,0,0.09);
         }
 
         [data-theme="dark"] .mot-cat-card {
           background-color: #1e293b;
           border-color: #334155;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .mot-cat-image-wrap {
+          width: 100%;
+          height: 280px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .mot-cat-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mot-cat-card:hover .mot-cat-img {
+          transform: scale(1.08);
         }
 
         .mot-cat-icon-wrapper {
-          width: 72px;
-          height: 72px;
-          background: #fff7ed;
-          border-radius: 20px;
+          width: 64px;
+          height: 64px;
+          background: linear-gradient(135deg, #f58220 0%, #ea580c 100%);
+          border-radius: 18px;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 24px;
+          position: absolute;
+          bottom: -32px;
+          right: 28px;
+          z-index: 10;
+          box-shadow: 0 6px 16px rgba(245, 130, 32, 0.35);
+          border: 2px solid #ffffff;
         }
-        [data-theme="dark"] .mot-cat-icon-wrapper { background: #0f172a; }
+        [data-theme="dark"] .mot-cat-icon-wrapper {
+          border-color: #1e293b;
+        }
 
         .mot-cat-icon {
-          font-size: 2.5rem;
-          color: #f58220;
+          font-size: 1.75rem;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mot-cat-body {
+          padding: 48px 36px 36px 36px;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
         }
 
         .mot-cat-card h3 {
-          font-size: 1.5rem;
+          font-size: 1.6rem;
           font-weight: 800;
           color: #0f172a;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
+          font-family: 'Playfair Display', serif;
         }
         [data-theme="dark"] .mot-cat-card h3 { color: #ffffff; }
 
         .mot-cat-subtitle {
-          font-size: 0.95rem;
+          font-size: 1.05rem;
           color: #64748b;
-          margin-bottom: 24px !important;
+          margin-bottom: 20px !important;
           line-height: 1.5;
         }
+        [data-theme="dark"] .mot-cat-subtitle { color: #94a3b8; }
 
-        .mot-cat-list {
-          color: #475569;
-          font-size: 0.95rem;
-        }
-        [data-theme="dark"] .mot-cat-list { color: #cbd5e1; }
-
-        .mot-cat-list li {
-          margin-bottom: 10px;
+        .mot-cat-tags {
           display: flex;
-          align-items: flex-start;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: auto;
+          padding-top: 20px;
         }
-        
-        .mot-list-bullet {
-          width: 6px;
-          height: 6px;
-          background-color: #f58220;
-          border-radius: 50%;
-          margin-top: 8px;
-          margin-right: 12px;
-          flex-shrink: 0;
+
+        .mot-cat-tag {
+          background-color: #f1f5f9;
+          color: #475569;
+          padding: 8px 14px;
+          border-radius: 10px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: all 0.2s ease;
+        }
+        .mot-cat-tag:hover {
+          background-color: rgba(245, 130, 32, 0.1);
+          color: #ea580c;
+        }
+        [data-theme="dark"] .mot-cat-tag {
+          background-color: #0f172a;
+          color: #cbd5e1;
+        }
+        [data-theme="dark"] .mot-cat-tag:hover {
+          background-color: rgba(245, 130, 32, 0.15);
+          color: #fb923c;
         }
 
         /* Core Dark Cards */
         .mot-dark-card {
           background: rgba(255,255,255,0.05);
-          padding: 40px;
-          border-radius: 24px;
+          padding: 48px;
+          border-radius: 28px;
           border: 1px solid rgba(255,255,255,0.1);
         }
         .mot-dark-card h3 {
-          font-size: 1.75rem;
+          font-size: 1.9rem;
           font-weight: 700;
-          margin-bottom: 20px;
+          margin-bottom: 24px;
+        }
+        .mot-dark-card p,
+        .mot-dark-card ul {
+          font-size: 1.15rem;
         }
         .mot-core-icon {
-          font-size: 3rem;
-          margin-bottom: 24px;
+          font-size: 3.5rem;
+          margin-bottom: 28px;
         }
 
         /* Quote Section */
@@ -930,44 +1032,44 @@ export default function MotivationalPage() {
         }
 
         .mot-quote-text-side {
-          padding: 80px 24px;
+          padding: 100px 32px;
           color: white;
         }
 
         @media (min-width: 1024px) {
-          .mot-quote-text-side { padding: 120px 64px 120px 0; }
+          .mot-quote-text-side { padding: 140px 80px 140px 0; }
         }
 
         .mot-quote-text-side h2 {
           font-family: 'Playfair Display', serif;
-          font-size: 2.5rem;
+          font-size: 3rem;
           font-weight: 800;
-          margin-bottom: 24px;
+          margin-bottom: 28px;
         }
 
         .mot-quote-main-text {
-          font-size: 1.75rem;
+          font-size: 2rem;
           font-weight: 700;
-          line-height: 1.4;
-          margin-bottom: 24px;
+          line-height: 1.45;
+          margin-bottom: 28px;
           font-style: italic;
         }
 
         .mot-quote-desc {
-          font-size: 1.125rem;
-          line-height: 1.7;
-          margin-bottom: 32px;
+          font-size: 1.2rem;
+          line-height: 1.75;
+          margin-bottom: 36px;
           opacity: 0.9;
         }
 
         .mot-quote-highlight {
-          font-size: 1.25rem;
+          font-size: 1.35rem;
           font-weight: 700;
           color: #fffbeb;
           background: rgba(0,0,0,0.1);
-          padding: 24px;
+          padding: 28px;
           border-radius: 16px;
-          border-left: 4px solid #fff;
+          border-left: 5px solid #fff;
         }
 
         .mot-quote-image-side {
@@ -993,7 +1095,7 @@ export default function MotivationalPage() {
           display: flex;
           overflow-x: auto;
           scroll-snap-type: x mandatory;
-          gap: 24px;
+          gap: 28px;
           padding: 16px 0 32px 0;
           scrollbar-width: none;
           -ms-overflow-style: none;
@@ -1006,8 +1108,8 @@ export default function MotivationalPage() {
         .mot-slider-btn {
           position: absolute;
           z-index: 10;
-          width: 56px;
-          height: 56px;
+          width: 64px;
+          height: 64px;
           border-radius: 50%;
           background: #ffffff;
           border: 1px solid #e2e8f0;
@@ -1018,7 +1120,7 @@ export default function MotivationalPage() {
           cursor: pointer;
           box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
           transition: all 0.3s ease;
-          font-size: 1.25rem;
+          font-size: 1.5rem;
         }
 
         [data-theme="dark"] .mot-slider-btn {
@@ -1034,8 +1136,8 @@ export default function MotivationalPage() {
           transform: scale(1.1);
         }
 
-        .mot-slider-prev { left: -28px; }
-        .mot-slider-next { right: -28px; }
+        .mot-slider-prev { left: -32px; }
+        .mot-slider-next { right: -32px; }
         
         @media (max-width: 1024px) {
           .mot-slider-prev, .mot-slider-next { display: none; }
@@ -1045,16 +1147,16 @@ export default function MotivationalPage() {
           background: #ffffff;
           flex: 0 0 100%;
           scroll-snap-align: center;
-          padding: 40px;
-          border-radius: 24px;
+          padding: 48px;
+          border-radius: 28px;
           box-shadow: 0 10px 30px rgba(0,0,0,0.05);
           display: flex;
           flex-direction: column;
           border: 1px solid #f1f5f9;
         }
 
-        @media (min-width: 768px) { .mot-test-card { flex: 0 0 calc(50% - 12px); } }
-        @media (min-width: 1024px) { .mot-test-card { flex: 0 0 calc(33.333% - 16px); } }
+        @media (min-width: 768px) { .mot-test-card { flex: 0 0 calc(50% - 14px); } }
+        @media (min-width: 1024px) { .mot-test-card { flex: 0 0 calc(33.333% - 18px); } }
 
         [data-theme="dark"] .mot-test-card {
           background: #1e293b;
@@ -1063,17 +1165,17 @@ export default function MotivationalPage() {
 
         .mot-stars {
           display: flex;
-          gap: 4px;
+          gap: 6px;
           color: #fbbf24;
-          font-size: 1.25rem;
+          font-size: 1.35rem;
           margin-bottom: 24px;
         }
 
         .mot-test-text {
-          font-size: 1.125rem;
+          font-size: 1.2rem;
           color: #475569;
           font-style: italic;
-          line-height: 1.7;
+          line-height: 1.75;
           flex-grow: 1;
           margin-bottom: 32px;
         }
@@ -1081,24 +1183,24 @@ export default function MotivationalPage() {
         [data-theme="dark"] .mot-test-text { color: #cbd5e1; }
 
         .mot-test-author { display: flex; flex-direction: column; }
-        .mot-test-author strong { color: #0f172a; font-size: 1.125rem; font-weight: 700; }
+        .mot-test-author strong { color: #0f172a; font-size: 1.2rem; font-weight: 700; }
         [data-theme="dark"] .mot-test-author strong { color: #f8fafc; }
-        .mot-test-author span { color: #64748b; font-size: 0.875rem; margin-top: 4px; }
+        .mot-test-author span { color: #64748b; font-size: 0.95rem; margin-top: 6px; }
 
         /* CTA Section */
         .mot-cta-section {
-          padding: 120px 0;
+          padding: 140px 0;
           background-color: #ffffff;
           text-align: center;
         }
         [data-theme="dark"] .mot-cta-section { background-color: #0f172a; }
 
         .mot-cta-box {
-          max-width: 800px;
+          max-width: 900px;
           margin: 0 auto;
           background: #f8fafc;
-          padding: 64px 40px;
-          border-radius: 32px;
+          padding: 80px 48px;
+          border-radius: 40px;
           border: 1px solid #f1f5f9;
         }
         [data-theme="dark"] .mot-cta-box {
@@ -1108,33 +1210,32 @@ export default function MotivationalPage() {
 
         .mot-cta-box h2 {
           font-family: 'Playfair Display', serif;
-          font-size: 3rem;
+          font-size: 3.5rem;
           font-weight: 800;
           color: #0f172a;
-          margin-bottom: 24px;
+          margin-bottom: 28px;
         }
         [data-theme="dark"] .mot-cta-box h2 { color: #ffffff; }
 
         .mot-cta-desc {
-          font-size: 1.125rem;
+          font-size: 1.25rem;
           color: #475569;
-          margin-bottom: 32px;
-          line-height: 1.7;
+          margin-bottom: 36px;
+          line-height: 1.75;
         }
         [data-theme="dark"] .mot-cta-desc { color: #cbd5e1; }
 
         .mot-cta-highlight-text {
-          font-size: 2rem;
+          font-size: 2.2rem;
           font-weight: 800;
           color: #f58220;
-          margin-bottom: 32px;
+          margin-bottom: 36px;
           font-family: 'Playfair Display', serif;
         }
-
         .mot-cta-desc-small {
-          font-size: 1rem;
+          font-size: 1.1rem;
           color: #64748b;
-          line-height: 1.6;
+          line-height: 1.65;
         }
       `}</style>
     </>

@@ -29,7 +29,7 @@ export default function SocialSidebar() {
     {
       name: "Instagram",
       color: "gradient",
-      url: "https://www.instagram.com/tejomarg/",
+      url: "https://www.instagram.com/5starlaptopadda/",
       icon: <FaInstagram />,
     },
     {

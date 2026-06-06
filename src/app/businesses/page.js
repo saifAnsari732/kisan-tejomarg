@@ -2,10 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { 
-  Megaphone, Rocket, Target, LineChart, Cpu, 
-  CheckCircle2, Globe, Users, ShieldCheck, Lightbulb
+  Megaphone, Rocket, Target, LineChart,
+  CheckCircle2, Users, ShieldCheck, Quote
 } from 'lucide-react';
-import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 export default function BusinessesPage() {
@@ -16,96 +15,37 @@ export default function BusinessesPage() {
     transition: { duration: 0.6 }
   };
 
+  const staggerContainer = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true },
+    transition: { staggerChildren: 0.1 }
+  };
+
   const coverages = [
     {
       title: "Digital Media & Communication",
-      icon: <Megaphone size={32} />,
-      themeColor: "#3b82f6", // blue
-      items: [
-        "Digital media trends and innovations",
-        "Social media strategies",
-        "Content creation and creator economy",
-        "Podcasting and video production",
-        "Online reputation management",
-        "Influencer marketing",
-        "Media technology and emerging platforms",
-        "Audience engagement and community building"
-      ]
+      icon: <Megaphone size={28} />,
+      themeColor: "#3b82f6",
+      desc: "Insights on digital media trends, social media, and content creation."
     },
     {
       title: "Business & Entrepreneurship",
-      icon: <Rocket size={32} />,
-      themeColor: "#f97316", // orange
-      items: [
-        "Startup ecosystem and innovation",
-        "Business planning and execution",
-        "Entrepreneurial success stories",
-        "Small and medium enterprises (SMEs/MSMEs)",
-        "Family-owned businesses",
-        "Business expansion strategies",
-        "Leadership and decision-making",
-        "Scaling and sustainability"
-      ]
+      icon: <Rocket size={28} />,
+      themeColor: "#f97316",
+      desc: "Startup ecosystems, MSME guidance, and strategic planning."
     },
     {
       title: "Consulting & Professional Services",
-      icon: <Users size={32} />,
-      themeColor: "#8b5cf6", // purple
-      items: [
-        "Business consulting solutions",
-        "Strategic planning",
-        "Organizational development",
-        "Operational efficiency",
-        "Corporate governance",
-        "Leadership development",
-        "Human resource strategies",
-        "Business transformation initiatives"
-      ]
+      icon: <Users size={28} />,
+      themeColor: "#8b5cf6",
+      desc: "Business solutions, organizational development, and operational efficiency."
     },
     {
-      title: "Marketing, Branding & Customer Experience",
-      icon: <Target size={32} />,
-      themeColor: "#f43f5e", // rose
-      items: [
-        "Brand strategy and positioning",
-        "Digital marketing",
-        "Performance marketing",
-        "Search engine optimization (SEO)",
-        "Customer acquisition and retention",
-        "Consumer behavior analysis",
-        "Public relations and reputation management",
-        "Customer experience and engagement"
-      ]
-    },
-    {
-      title: "Finance, Investment & Economic Insights",
-      icon: <LineChart size={32} />,
-      themeColor: "#10b981", // emerald
-      items: [
-        "Business finance and management",
-        "Investment opportunities",
-        "Startup funding and venture capital",
-        "Financial planning and forecasting",
-        "Market trends and economic developments",
-        "Wealth creation strategies",
-        "Corporate finance",
-        "Risk management"
-      ]
-    },
-    {
-      title: "Technology & Innovation",
-      icon: <Cpu size={32} />,
-      themeColor: "#0ea5e9", // sky
-      items: [
-        "Artificial Intelligence (AI)",
-        "Automation and process optimization",
-        "Digital transformation",
-        "Software and SaaS businesses",
-        "Cybersecurity",
-        "Data analytics and business intelligence",
-        "Cloud computing",
-        "Emerging technologies and future trends"
-      ]
+      title: "Marketing & Branding",
+      icon: <Target size={28} />,
+      themeColor: "#f43f5e",
+      desc: "Brand positioning, SEO, and performance marketing strategies."
     }
   ];
 
@@ -115,255 +55,331 @@ export default function BusinessesPage() {
     "Travel & Hospitality", "Infrastructure & Construction", 
     "Energy & Sustainability", "FMCG & Consumer Brands", 
     "Logistics & Supply Chain", "Automobile Industry", "FinTech", 
-    "Media & Entertainment", "Sports Business", "Government & Public Sector Initiatives"
-  ];
-
-  const missions = [
-    "Deliver reliable and actionable business information.",
-    "Support entrepreneurship and innovation.",
-    "Promote digital transformation and modern business practices.",
-    "Encourage leadership, creativity, and strategic thinking.",
-    "Create awareness of emerging industries and opportunities.",
-    "Build a strong bridge between businesses, professionals, and communities."
+    "Media & Entertainment", "Sports Business", "Government & Public Sector"
   ];
 
   const testimonials = [
     { role: "Startup Founder", quote: "Tejomarg Business Info provides practical insights that go beyond theory. The content helped us understand market trends, improve our branding strategy, and make more confident business decisions.", author: "Startup Entrepreneur" },
-    { role: "Business Consultant", quote: "The platform covers a wide range of industries and delivers information in a way that is easy to understand and implement. It has become one of my preferred sources for business updates and industry insights.", author: "Business Consultant" },
-    { role: "Digital Media Professional", quote: "The digital media and branding content from Tejomarg has been extremely valuable. The insights on audience engagement, content strategy, and online growth helped us strengthen our digital presence.", author: "Media & Marketing Professional" },
+    { role: "Business Consultant", quote: "The platform covers a wide range of industries and delivers information in a way that is easy to understand and implement. It has become one of my preferred sources for business updates.", author: "Business Consultant" },
+    { role: "Digital Media Professional", quote: "The digital media and branding content from Tejomarg has been extremely valuable. The insights on audience engagement helped us strengthen our digital presence.", author: "Media & Marketing Professional" },
     { role: "Small Business Owner", quote: "Running a business requires constant learning. Tejomarg Business Info provides relevant knowledge, practical guidance, and fresh perspectives that help businesses stay competitive.", author: "Small Business Owner" },
     { role: "Industry Professional", quote: "What makes Tejomarg unique is its ability to combine business knowledge, innovation, and real-world applications. The platform offers valuable information for professionals across different sectors.", author: "Industry Expert" },
     { role: "Entrepreneur & Investor", quote: "Tejomarg Business Info serves as a bridge between ideas and execution. The content is insightful, informative, and highly relevant for anyone looking to grow professionally or commercially.", author: "Entrepreneur & Investor" }
   ];
 
-  const communityMembers = [
-    "Entrepreneurs & Startup Founders",
-    "Business Owners & MSMEs",
-    "Consultants & Advisors",
-    "Digital Creators & Media Professionals",
-    "Investors & Financial Experts",
-    "Corporate Leaders & Executives",
-    "Innovators & Technology Enthusiasts",
-    "Industry Professionals Across Multiple Sectors"
+  const ladderSteps = [
+    "At the heart of our mission is the need for constant creation of the new and the adaptation of the old. We strive to pioneer creative business paradigms, fostering an environment where traditional methods blend seamlessly with cutting-edge strategies.",
+    "We foresee improving our worldwide reach by nurturing more profound, longer-lasting connections with our customers. Our goal is to expand our digital footprint globally, ensuring that every partnership is rooted in trust, transparency, and shared growth.",
+    "Looking ahead, it is also our aim to drive sustainable growth - not just for us but also for our clients. We construct resilient roadmaps that allow businesses to flourish responsibly, leaving a positive, lasting impact on the economy.",
+    "We believe in promoting digital transformation and modern business practices to stay ahead of the curve. By leveraging state-of-the-art technologies and data insights, we empower brands to confidently navigate the complexities of tomorrow."
   ];
 
   return (
     <>
-      <Navbar />
       <div className="biz-page">
-        
+        <a href="/" className="biz-floating-back-btn">Back to Home</a>
         {/* Hero Section */}
         <section className="biz-hero">
+          <div className="biz-hero-glow"></div>
           <div className="biz-container biz-hero-content">
-            <motion.div {...fadeInUp} className="biz-hero-text">
-              <span className="biz-badge">Tejomarg Business Info</span>
-              <h1 className="biz-title">
-                Empowering Businesses Through <br />
-                <span className="biz-gradient-text">Knowledge & Innovation</span>
-              </h1>
-              <p className="biz-subtitle">
-                In today’s rapidly evolving business landscape, success is driven by informed decisions, strategic thinking, innovation, and adaptability. Tejomarg Business Info is a comprehensive platform dedicated to delivering valuable insights, industry knowledge, and growth opportunities.
-              </p>
-              <p className="biz-desc">
-                Whether you are building a startup, scaling an established company, exploring new opportunities, or navigating digital transformation, we serve as your reliable source for business knowledge and strategic guidance.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* What We Cover Section */}
-        <section className="biz-section biz-bg-light">
-          <div className="biz-container">
-            <motion.div {...fadeInUp} className="biz-section-header">
-              <h2>What We Cover</h2>
-              <div className="biz-divider"></div>
-            </motion.div>
-
-            <div className="biz-grid">
-              {coverages.map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  {...fadeInUp}
-                  transition={{ delay: idx * 0.1 }}
-                  className="biz-card"
-                  style={{ '--theme-color': item.themeColor }}
-                >
-                  <div className="biz-card-icon">
-                    {item.icon}
+            <div className="biz-hero-grid">
+              <motion.div {...fadeInUp} className="biz-hero-text">
+                <span className="biz-badge">Tejomarg Business Info</span>
+                <h1 className="biz-title">
+                  Empowering Businesses Through <br />
+                  <span className="biz-gradient-text">Knowledge & Innovation</span>
+                </h1>
+                <p className="biz-subtitle">
+                  In today’s rapidly evolving business landscape, success is driven by informed decisions, strategic thinking, innovation, and adaptability.
+                </p>
+                <div className="biz-hero-actions">
+                  <button className="biz-btn-primary">Explore Insights</button>
+                  <a 
+                    href="https://wa.me/919511150925?text=नमस्ते! मुझे Tejomarg के बारे में अधिक जानकारी चाहिए।" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="biz-btn-outline"
+                    style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                  >
+                    Join Community
+                  </a>
+                </div>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                className="biz-hero-image-wrap"
+              >
+                <img src="/business/presentation.webp" alt="Business Presentation" className="biz-hero-img" />
+                <div className="biz-glass-card">
+                  <div className="biz-glass-icon"><LineChart size={20} /></div>
+                  <div>
+                    <h4>Growth Driven</h4>
+                    <p>Accelerate your business scale</p>
                   </div>
-                  <h3>{item.title}</h3>
-                  <ul className="biz-list">
-                    {item.items.map((point, i) => (
-                      <li key={i}>
-                        <CheckCircle2 className="biz-check-icon" size={18} />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Industry Coverage Section */}
-        <section className="biz-section biz-border-y">
-          <div className="biz-container">
-            <div className="biz-flex-row">
-              <motion.div {...fadeInUp} className="biz-flex-left">
-                <div className="biz-icon-box">
-                  <Globe size={32} />
-                </div>
-                <h2>Industry Coverage</h2>
-                <p>
-                  Tejomarg Business Info spans a wide range of industries, providing deep insights tailored to specific sectors.
-                </p>
-              </motion.div>
-              
-              <motion.div {...fadeInUp} className="biz-flex-right">
-                <div className="biz-tags">
-                  {industries.map((industry, idx) => (
-                    <span key={idx} className="biz-tag">
-                      {industry}
-                    </span>
-                  ))}
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Vision & Mission Section */}
-        <section className="biz-section biz-bg-light">
+        {/* Mission & Vision Section (Strictly matching layout) */}
+        <section className="biz-section">
           <div className="biz-container">
-            <div className="biz-grid-2">
-              
-              {/* Vision */}
-              <motion.div {...fadeInUp} className="biz-vision-card">
-                <Lightbulb size={48} className="biz-vision-icon" />
-                <h2>Our Vision</h2>
-                <p>
-                  To become a leading platform that connects businesses, entrepreneurs, innovators, and professionals with knowledge, opportunities, and insights that drive sustainable growth and positive impact.
-                </p>
-              </motion.div>
+            <div className="biz-vision-layout">
+              {/* Header Title on Top Left, Subtitle Centered */}
+              <div className="biz-vision-header-container">
+                <div className="biz-vision-title-left">
+                  Mission & <span style={{ color: '#0ea5e9' }}>Vision</span>
+                </div>
+                <div className="biz-vision-subtitle-right">
+                  Our core principles driving meaningful growth.
+                </div>
+              </div>
 
-              {/* Mission */}
-              <motion.div {...fadeInUp} className="biz-mission-card">
-                <ShieldCheck size={48} className="biz-mission-icon" />
-                <h2>Our Mission</h2>
-                <ul className="biz-mission-list">
-                  {missions.map((mission, idx) => (
-                    <li key={idx}>
-                      <div className="biz-mission-check">
-                        <CheckCircle2 size={16} />
-                      </div>
-                      <span>{mission}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="biz-section biz-border-y">
-          <div className="biz-container">
-            <motion.div {...fadeInUp} className="biz-section-header">
-              <h2>What People Say About Tejomarg Business Info</h2>
-              <p className="biz-section-desc">
-                At Tejomarg, we measure our success through the growth, trust, and positive impact we create for businesses, entrepreneurs, professionals, and organizations. Here are some experiences shared by members of our community.
-              </p>
-              <div className="biz-divider" style={{ marginTop: '24px' }}></div>
-            </motion.div>
-
-            <div className="biz-grid">
-              {testimonials.map((testi, idx) => (
-                <motion.div 
-                  key={idx}
-                  {...fadeInUp}
-                  transition={{ delay: idx * 0.1 }}
-                  className="biz-card biz-testi-card"
-                >
-                  <div className="biz-testi-star">⭐ {testi.role}</div>
-                  <p className="biz-testi-quote">"{testi.quote}"</p>
-                  <div className="biz-testi-author">— {testi.author}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Trusted By Section */}
-        <section className="biz-section biz-bg-light">
-          <div className="biz-container">
-            <motion.div {...fadeInUp} className="biz-section-header">
-              <h2>Trusted by Visionaries, Entrepreneurs & Growth Leaders</h2>
-              <p className="biz-section-desc">
-                "Tejomarg Business Info is committed to empowering businesses with knowledge, innovation, and opportunities that drive meaningful growth."
-              </p>
-              <div className="biz-divider" style={{ marginTop: '24px' }}></div>
-            </motion.div>
-
-            <div className="biz-community-box">
-              <h3>Our Community Includes:</h3>
-              <div className="biz-community-grid">
-                {communityMembers.map((member, idx) => (
-                  <motion.div key={idx} {...fadeInUp} transition={{ delay: idx * 0.05 }} className="biz-community-item">
-                    <CheckCircle2 size={20} className="biz-check-icon" />
-                    <span>{member}</span>
+              {/* Ladder Stack (Matches screenshot style) */}
+              <div className="biz-screenshot-ladder">
+                {ladderSteps.map((step, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.15, duration: 0.5 }}
+                    className="biz-screenshot-step"
+                  >
+                    <div className="biz-screenshot-number-box">
+                      0{idx + 1}
+                    </div>
+                    <div className="biz-screenshot-card">
+                      <p>{step}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            <motion.div {...fadeInUp} className="biz-share-story">
-              <h3>Share Your Success Story</h3>
-              <p>
-                We value the experiences of our community. If Tejomarg Business Info has contributed to your business journey, growth, or professional success, we would love to hear your story and feature your experience.
-              </p>
-              <p className="biz-story-highlight">Your Growth. Your Story. Our Inspiration.</p>
-              <button className="biz-btn-primary">Share Your Story</button>
+            {/* Stats Bar */}
+            <motion.div {...fadeInUp} className="biz-stats-bar">
+              <div className="biz-stats-grid">
+                <div className="biz-stat-item">
+                  <Users size={28} />
+                  <div>
+                    <h4>10+</h4>
+                    <p>Years Experience</p>
+                  </div>
+                </div>
+                <div className="biz-stat-item">
+                  <ShieldCheck size={28} />
+                  <div>
+                    <h4>1000+</h4>
+                    <p>Customers Satisfied</p>
+                  </div>
+                </div>
+                <div className="biz-stat-item">
+                  <Target size={28} />
+                  <div>
+                    <h4>96%+</h4>
+                    <p>Client Retention</p>
+                  </div>
+                </div>
+              </div>
+              <div className="biz-stat-btn-wrap">
+                <button className="biz-btn-cyan">Ready To Start Your Project</button>
+              </div>
+            </motion.div>
+
+          </div>
+        </section>
+
+        {/* What We Cover Section (Converted to top-down layout) */}
+        <section className="biz-section">
+          <div className="biz-container">
+            <motion.div {...fadeInUp} className="biz-cover-topdown-header">
+              <span className="biz-small-label centered">What We Cover</span>
+              <h2 className="biz-cover-topdown-heading">
+                From marketing strategies to financial insights, we provide comprehensive resources for your business growth.
+              </h2>
+            </motion.div>
+            
+            <div className="biz-cover-grid">
+              {coverages.map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -8, boxShadow: '0 12px 30px rgba(0,0,0,0.08)', borderColor: item.themeColor }}
+                  className="biz-cover-card"
+                >
+                  <div className="biz-cover-card-bar" style={{ backgroundColor: `${item.themeColor}12`, color: item.themeColor }}>
+                    {item.icon}
+                  </div>
+                  <div className="biz-cover-card-body">
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.7 }}
+              className="biz-cover-bottom-img-wrap"
+            >
+              <img src="/business/analytics.webp" alt="Business Analytics Metrics" className="biz-cover-bottom-img" />
             </motion.div>
           </div>
         </section>
 
-        {/* Why Tejomarg Section */}
-        <section className="biz-cta-section">
-          <div className="biz-cta-bg"></div>
-          <div className="biz-container biz-cta-content">
-            <motion.div {...fadeInUp}>
-              <h2>Why Tejomarg Business Info?</h2>
-              <p>
-                At Tejomarg, we believe that every successful business begins with a vision, but sustainable success is achieved through knowledge, strategy, and continuous learning. Our platform is designed to inform, inspire, and empower individuals and organizations across every stage of their business journey.
-              </p>
-              <p className="biz-mb">
-                From startups to established enterprises, from digital media to consulting, from local businesses to global industries—we cover everything that contributes to business growth, innovation, and success.
-              </p>
+        {/* Industry Coverage Section */}
+        <section className="biz-section">
+          <div className="biz-container">
+            <div className="biz-cover-split reverse">
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="biz-cover-left"
+              >
+                <img src="/business/signing.webp" alt="Business Signing" className="biz-cover-main-img" />
+              </motion.div>
               
-              <div className="biz-quote-box">
-                <h3>Knowledge. Innovation. Growth. Impact.</h3>
-                <p>"Where Ideas Become Opportunities and Information Becomes Growth."</p>
+              <div className="biz-cover-right">
+                <span className="biz-small-label">Target Markets</span>
+                <h2 className="biz-cover-heading">
+                  Tejomarg Business Info spans a wide range of industries, providing deep insights tailored to specific sectors.
+                </h2>
+                <div className="biz-tags-grid">
+                  {industries.map((industry, idx) => (
+                    <span key={idx} className="biz-industry-tag">
+                      {industry}
+                    </span>
+                  ))}
+                </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="biz-section">
+          <div className="biz-container">
+            <motion.div {...fadeInUp} className="biz-center-header">
+              <span className="biz-small-label centered">Testimonials</span>
+              <h2 className="biz-section-title">What People Say About Tejomarg Business Info</h2>
+              <p className="biz-section-subtitle">
+                At Tejomarg, we measure our success through the growth, trust, and positive impact we create for businesses, entrepreneurs, professionals, and organizations.
+              </p>
             </motion.div>
+
+            <motion.div 
+              variants={staggerContainer} 
+              initial="initial" 
+              whileInView="whileInView" 
+              className="biz-testimonials-grid"
+            >
+              {testimonials.map((testi, idx) => (
+                <motion.div 
+                  key={idx}
+                  variants={fadeInUp}
+                  whileHover={{ y: -8 }}
+                  className="biz-testimonial-card"
+                >
+                  <div className="biz-testimonial-top">
+                    <div className="biz-testimonial-role-badge">
+                      <span className="biz-dot"></span>
+                      {testi.role}
+                    </div>
+                    <div className="biz-testimonial-quote-icon">
+                      <Quote size={20} />
+                    </div>
+                  </div>
+                  <p className="biz-testimonial-quote">
+                    "{testi.quote}"
+                  </p>
+                  <div className="biz-testimonial-author">
+                    {testi.author}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Brainstorming Banner */}
+        <section className="biz-banner-section">
+          <div className="biz-banner-bg">
+            <img src="/business/brainstorming.webp" alt="Brainstorming" />
+            <div className="biz-banner-overlay"></div>
+          </div>
+          <div className="biz-container biz-banner-inner">
+            <motion.div {...fadeInUp}>
+              <h2>Knowledge. Innovation. Growth.</h2>
+              <p>"Where Ideas Become Opportunities and Information Becomes Growth."</p>
+              {/* <button className="biz-btn-cyan-large">Share Your Success Story</button> */}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Trusted By / Community */}
+        <section className="biz-section">
+          <div className="biz-container">
+            <div className="biz-cover-split">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="biz-cover-left"
+              >
+                <img src="/business/handshake.webp" alt="Handshake Collaboration" className="biz-cover-main-img" />
+              </motion.div>
+              
+              <div className="biz-cover-right">
+                <span className="biz-small-label">Our Community</span>
+                <h2 className="biz-cover-heading">
+                  Trusted by Visionaries & Entrepreneurs
+                </h2>
+                <p className="biz-section-paragraph">
+                  "Tejomarg Business Info is committed to empowering businesses with knowledge, innovation, and opportunities that drive meaningful growth."
+                </p>
+                <div className="biz-check-list">
+                  {[
+                    "Entrepreneurs & Startup Founders",
+                    "Business Owners & MSMEs",
+                    "Consultants & Advisors",
+                    "Digital Creators & Media Professionals"
+                  ].map((member, idx) => (
+                    <div key={idx} className="biz-check-item">
+                      <div className="biz-check-icon">
+                        <CheckCircle2 size={18} />
+                      </div>
+                      <span>{member}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
+
       <Footer />
 
       <style jsx>{`
-        /* Pure CSS Styling for Businesses Page */
+        /* Global page layout using system's theme background */
         .biz-page {
           font-family: 'Inter', -apple-system, sans-serif;
-          background-color: #ffffff;
-          color: #1e293b;
-          min-height: 100vh;
-        }
-
-        :global([data-theme="dark"]) .biz-page {
-          background-color: #0f172a;
-          color: #f8fafc;
+          background-color: var(--bg-main);
+          color: var(--text-dark);
+          overflow-x: hidden;
+          position: relative;
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .biz-container {
@@ -372,658 +388,690 @@ export default function BusinessesPage() {
           padding: 0 24px;
         }
 
+        /* Floating Back Button */
+        .biz-floating-back-btn {
+          position: absolute;
+          top: 24px;
+          right: 24px;
+          z-index: 100;
+          color: var(--text-dark);
+          border: 1px solid var(--border-color);
+          background: var(--bg-white);
+          padding: 8px 18px;
+          border-radius: 20px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 13px;
+          transition: all 0.2s ease;
+          box-shadow: var(--shadow-sm);
+        }
+        .biz-floating-back-btn:hover {
+          background-color: var(--bg-section);
+          border-color: var(--primary-saffron);
+          transform: translateY(-1px);
+        }
+
         /* Hero Section */
         .biz-hero {
           position: relative;
-          padding: 160px 0 100px;
+          padding: 80px 0 90px 0;
           overflow: hidden;
-          background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-          color: #ffffff;
-          text-align: center;
         }
-
-        .biz-hero-content {
-          position: relative;
-          z-index: 10;
+        .biz-hero-glow {
+          position: absolute;
+          top: -200px;
+          right: -100px;
+          width: 600px;
+          height: 600px;
+          background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0) 70%);
+          border-radius: 50%;
+          pointer-events: none;
+        }
+        .biz-hero-grid {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 48px;
         }
 
         .biz-hero-text {
-          max-width: 900px;
+          max-width: 800px;
           margin: 0 auto;
         }
 
         .biz-badge {
           display: inline-block;
-          background-color: rgba(59, 130, 246, 0.2);
-          color: #93c5fd;
-          border: 1px solid rgba(96, 165, 250, 0.3);
+          background-color: rgba(59, 130, 246, 0.08);
+          color: #2563eb;
+          border: 1px solid rgba(59, 130, 246, 0.2);
           padding: 6px 16px;
           border-radius: 50px;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 600;
-          letter-spacing: 1px;
           text-transform: uppercase;
+          letter-spacing: 0.5px;
           margin-bottom: 24px;
         }
 
         .biz-title {
-          font-size: 3.5rem;
-          font-weight: 800;
-          line-height: 1.2;
+          font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+          font-weight: 850;
+          line-height: 1.18;
           margin-bottom: 24px;
-          color: #ffffff;
-          font-family: 'Inter', -apple-system, sans-serif;
+          color: var(--text-dark);
+          letter-spacing: -0.5px;
         }
 
         .biz-gradient-text {
-          background: linear-gradient(to right, #fb923c, #fcd34d);
+          background: linear-gradient(to right, #0ea5e9, #6366f1);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
 
         .biz-subtitle {
-          font-size: 1.25rem;
-          color: #cbd5e1;
-          margin-bottom: 20px;
-          line-height: 1.6;
+          font-size: 1.35rem;
+          color: var(--text-muted);
+          margin-bottom: 36px;
+          line-height: 1.65;
         }
 
-        .biz-desc {
-          font-size: 1.125rem;
-          color: #94a3b8;
-          line-height: 1.6;
+        .biz-hero-actions {
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .biz-btn-primary {
+          background-color: #2563eb;
+          color: white;
+          border: none;
+          padding: 14px 28px;
+          border-radius: 10px;
+          font-size: 0.95rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+        }
+        .biz-btn-primary:hover {
+          background-color: #1d4ed8;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .biz-btn-outline {
+          background-color: transparent;
+          color: var(--text-dark);
+          border: 1.5px solid var(--border-color);
+          padding: 14px 28px;
+          border-radius: 10px;
+          font-size: 0.95rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .biz-btn-outline:hover {
+          border-color: var(--text-dark);
+          background-color: var(--bg-section);
+          transform: translateY(-2px);
+        }
+
+        .biz-hero-image-wrap {
+          position: relative;
+          border-radius: 20px;
+          border: 1px solid var(--border-color);
+          max-width: 850px;
+          width: 100%;
+          margin: 0 auto;
+        }
+        .biz-hero-img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 20px;
+        }
+        .biz-glass-card {
+          position: absolute;
+          bottom: 24px;
+          left: -24px;
+          width: 280px;
+          background: var(--bg-white);
+          backdrop-filter: blur(12px);
+          padding: 18px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          border: 1px solid var(--border-color);
+          box-shadow: var(--shadow-md);
+          z-index: 10;
+        }
+        @media (max-width: 768px) {
+          .biz-glass-card {
+            left: 20px;
+            right: 20px;
+            width: auto;
+          }
+        }
+        .biz-glass-icon {
+          color: #0ea5e9;
+          background: rgba(14, 165, 233, 0.1);
+          padding: 10px;
+          border-radius: 8px;
+        }
+        .biz-glass-card h4 {
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: var(--text-dark);
+          margin: 0 0 2px 0;
+        }
+        .biz-glass-card p {
+          font-size: 0.8rem;
+          color: var(--text-muted);
+          margin: 0;
         }
 
         /* Generic Section */
         .biz-section {
-          padding: 100px 0;
+          padding: 80px 0;
+        }        /* Vision & Mission Layout */
+        .biz-vision-layout {
+          max-width: 1000px;
+          margin: 0 auto 60px auto;
         }
-
-        .biz-bg-light {
-          background-color: #f8fafc;
+        .biz-vision-header-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          border-bottom: 1px solid var(--border-color);
+          padding-bottom: 24px;
+          margin-bottom: 48px;
+          flex-wrap: wrap;
+          gap: 16px;
         }
-
-        :global([data-theme="dark"]) .biz-bg-light {
-          background-color: #1e293b;
+        .biz-vision-title-left {
+          font-size: 2.8rem;
+          font-weight: 900;
+          font-family: serif, 'Playfair Display';
+          background: linear-gradient(135deg, #090d16 0%, #1e3a8a 60%, #2563eb 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
-
-        .biz-border-y {
-          border-top: 1px solid #e2e8f0;
-          border-bottom: 1px solid #e2e8f0;
+        .biz-vision-subtitle-right {
+          font-size: 1.1rem;
+          color: var(--text-muted);
         }
-
-        :global([data-theme="dark"]) .biz-border-y {
-          border-color: #334155;
-        }
-
-        .biz-section-header {
-          text-align: center;
-          margin-bottom: 64px;
-        }
-
-        .biz-section-header h2, .biz-flex-left h2, .biz-vision-card h2, .biz-mission-card h2, .biz-cta-content h2 {
-          font-family: 'Inter', -apple-system, sans-serif;
-        }
-
-        .biz-section-header h2 {
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: #0f172a;
-          margin-bottom: 16px;
-        }
-
-        :global([data-theme="dark"]) .biz-section-header h2 {
-          color: #ffffff;
-        }
-
-        .biz-divider {
-          width: 80px;
-          height: 6px;
-          background: linear-gradient(to right, #f97316, #fbbf24);
-          margin: 0 auto;
-          border-radius: 10px;
-        }
-
-        /* Grid & Cards */
-        .biz-grid {
+        
+        .biz-screenshot-ladder {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
           gap: 32px;
+          width: 100%;
         }
-
-        .biz-card {
-          background-color: #ffffff;
-          border-radius: 24px;
-          padding: 40px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-          border: 1px solid #f1f5f9;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          position: relative;
-          overflow: hidden;
+        @media (max-width: 900px) {
+          .biz-screenshot-ladder {
+            grid-template-columns: 1fr;
+          }
         }
-
-        :global([data-theme="dark"]) .biz-card {
-          background-color: #0f172a;
-          border-color: #334155;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .biz-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        :global([data-theme="dark"]) .biz-card:hover {
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .biz-card-icon {
-          width: 64px;
-          height: 64px;
+        .biz-screenshot-step {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          background: var(--bg-white);
+          border: 1px solid var(--border-color);
           border-radius: 16px;
+          padding: 32px;
+          position: relative;
+          box-shadow: var(--shadow-sm);
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .biz-screenshot-step:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-md);
+          border-color: rgba(37, 99, 235, 0.4);
+        }
+
+        .biz-screenshot-number-box {
+          font-size: 3.8rem;
+          font-weight: 900;
+          line-height: 1;
+          margin-bottom: 16px;
+          background: linear-gradient(135deg, #090d16 0%, #1e3a8a 50%, #2563eb 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-family: serif, 'Playfair Display';
+        }
+        
+        .biz-screenshot-card {
+          background: transparent;
+          border-radius: 0;
+          padding: 0;
+          width: 100%;
+          box-shadow: none;
+        }
+        .biz-screenshot-card p {
+          color: var(--text-dark);
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin: 0;
+          font-weight: 500;
+        }
+
+        /* Stats Bar */
+        .biz-stats-bar {
+          background: var(--bg-section);
+          border: 1px solid var(--border-color);
+          backdrop-filter: blur(12px);
+          border-radius: 16px;
+          padding: 30px 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 24px;
+          margin-top: 40px;
+        }
+        .biz-stats-grid {
+          display: flex;
+          gap: 48px;
+          flex-wrap: wrap;
+        }
+        .biz-stat-item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          color: #0ea5e9;
+        }
+        .biz-stat-item h4 {
+          font-size: 1.6rem;
+          font-weight: 800;
+          color: var(--text-dark);
+          margin: 0;
+        }
+        .biz-stat-item p {
+          font-size: 0.875rem;
+          color: var(--text-muted);
+          margin: 0;
+        }
+        .biz-btn-cyan {
+          background-color: #0091ea;
+          color: white;
+          border: none;
+          padding: 12px 24px;
+          border-radius: 8px;
+          font-size: 0.95rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+        .biz-btn-cyan:hover {
+          background-color: #0284c7;
+        }
+
+        /* What We Cover - Split Section */
+        .biz-cover-split {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 60px;
+          align-items: center;
+        }
+        @media (min-width: 992px) {
+          .biz-cover-split { grid-template-columns: 1fr 1.1fr; }
+          .biz-cover-split.reverse .biz-cover-left { order: 2; }
+          .biz-cover-split.reverse .biz-cover-right { order: 1; }
+        }
+        .biz-cover-left {
+          position: relative;
+        }
+        .biz-cover-main-img {
+          width: 100%;
+          height: auto;
+          border-radius: 20px;
+          display: block;
+          box-shadow: var(--shadow-md);
+          border: 1px solid var(--border-color);
+        }
+
+        .biz-cover-right {
+          text-align: left;
+        }
+        .biz-small-label {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          color: #0ea5e9;
+          font-weight: 600;
+          display: block;
+          margin-bottom: 12px;
+        }
+        .biz-small-label.centered {
+          text-align: center;
+        }
+        .biz-cover-heading {
+          font-size: 1.8rem;
+          line-height: 1.45;
+          font-weight: 700;
+          color: var(--text-dark);
+          margin-bottom: 36px;
+        }
+        @media (max-width: 768px) {
+          .biz-cover-heading { font-size: 1.5rem; }
+        }
+
+        .biz-cover-list {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+        .biz-cover-item {
+          display: flex;
+          gap: 20px;
+          align-items: flex-start;
+          transition: transform 0.2s ease;
+        }
+        .biz-cover-icon-box {
+          padding: 12px;
+          border-radius: 12px;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 24px;
-          background-color: color-mix(in srgb, var(--theme-color) 15%, transparent);
-          color: var(--theme-color);
+          flex-shrink: 0;
         }
-
-        .biz-card h3 {
-          font-family: 'Inter', -apple-system, sans-serif;
-          font-size: 1.5rem;
+        .biz-cover-item-text h3 {
+          font-size: 1.15rem;
           font-weight: 700;
-          color: #0f172a;
-          margin-bottom: 24px;
+          color: var(--text-dark);
+          margin: 0 0 6px 0;
         }
-
-        :global([data-theme="dark"]) .biz-card h3 {
-          color: #ffffff;
-        }
-
-        .biz-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .biz-list li {
-          display: flex;
-          align-items: flex-start;
-          margin-bottom: 12px;
-          color: #475569;
+        .biz-cover-item-text p {
           font-size: 0.95rem;
+          color: var(--text-muted);
+          margin: 0;
           line-height: 1.5;
         }
 
-        :global([data-theme="dark"]) .biz-list li {
-          color: #cbd5e1;
+        /* What We Cover - Top Down Layout */
+        .biz-cover-topdown-header {
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto 48px auto;
+        }
+        .biz-cover-topdown-heading {
+          font-size: 2.2rem;
+          line-height: 1.35;
+          font-weight: 800;
+          color: var(--text-dark);
+          margin-top: 12px;
+        }
+        @media (max-width: 768px) {
+          .biz-cover-topdown-heading { font-size: 1.6rem; }
         }
 
-        .biz-check-icon {
-          color: var(--theme-color);
-          margin-right: 12px;
-          margin-top: 2px;
-          flex-shrink: 0;
+        .biz-cover-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 24px;
+          margin-bottom: 50px;
+        }
+        @media (min-width: 992px) {
+          .biz-cover-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
         }
 
-        /* Flex Layout */
-        .biz-flex-row {
+        .biz-cover-card {
+          background: var(--bg-white);
+          border: 1px solid var(--border-color);
+          border-radius: 14px;
+          overflow: hidden;
           display: flex;
           flex-direction: column;
-          gap: 48px;
-          align-items: center;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow: var(--shadow-sm);
         }
-
-        @media (min-width: 992px) {
-          .biz-flex-row {
-            flex-direction: row;
-          }
-          .biz-flex-left {
-            flex: 0 0 35%;
-          }
-          .biz-flex-right {
-            flex: 1;
-          }
-        }
-
-        .biz-icon-box {
-          width: 64px;
-          height: 64px;
-          border-radius: 16px;
-          background-color: rgba(37, 99, 235, 0.1);
-          color: #2563eb;
+        .biz-cover-card-bar {
+          padding: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 24px;
+          transition: all 0.3s ease;
+        }
+        .biz-cover-card:hover {
+          transform: translateY(-8px);
+        }
+        .biz-cover-card-body {
+          padding: 24px;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+        }
+        .biz-cover-card-body h3 {
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: var(--text-dark);
+          margin: 0 0 10px 0;
+          line-height: 1.4;
+        }
+        .biz-cover-card-body p {
+          font-size: 0.92rem;
+          color: var(--text-muted);
+          margin: 0;
+          line-height: 1.5;
         }
 
-        :global([data-theme="dark"]) .biz-icon-box {
-          background-color: rgba(96, 165, 250, 0.15);
-          color: #60a5fa;
+        .biz-cover-bottom-img-wrap {
+          max-width: 800px;
+          margin: 40px auto 0 auto;
+          position: relative;
+        }
+        .biz-cover-bottom-img {
+          width: 100%;
+          height: auto;
+          border-radius: 20px;
+          display: block;
+          box-shadow: var(--shadow-md);
+          border: 1px solid var(--border-color);
         }
 
-        .biz-flex-left h2 {
-          font-size: 2.25rem;
-          font-weight: 800;
-          margin-bottom: 24px;
-          color: #0f172a;
-        }
-
-        :global([data-theme="dark"]) .biz-flex-left h2 {
-          color: #ffffff;
-        }
-
-        .biz-flex-left p {
-          font-size: 1.125rem;
-          color: #475569;
-          line-height: 1.6;
-        }
-
-        :global([data-theme="dark"]) .biz-flex-left p {
-          color: #cbd5e1;
-        }
-
-        .biz-tags {
+        /* Industry Tags */
+        .biz-tags-grid {
           display: flex;
           flex-wrap: wrap;
-          gap: 12px;
+          gap: 10px;
         }
-
-        .biz-tag {
-          padding: 12px 20px;
-          background-color: #f1f5f9;
-          border: 1px solid #e2e8f0;
-          border-radius: 12px;
+        .biz-industry-tag {
+          background-color: var(--bg-white);
+          border: 1px solid var(--border-color);
+          color: var(--text-dark);
+          padding: 8px 16px;
+          border-radius: 8px;
           font-size: 0.875rem;
-          font-weight: 600;
-          color: #334155;
-          cursor: default;
+          font-weight: 500;
           transition: all 0.2s ease;
         }
+        .biz-industry-tag:hover {
+          background-color: #0ea5e9;
+          color: white;
+          border-color: #0ea5e9;
+          transform: translateY(-1px);
+        }
 
-        :global([data-theme="dark"]) .biz-tag {
-          background-color: #1e293b;
-          border-color: #334155;
+        /* Center Headers */
+        .biz-center-header {
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto 60px auto;
+        }
+        .biz-section-title {
+          font-size: 2.25rem;
+          font-weight: 800;
+          color: var(--text-dark);
+          margin: 12px 0 16px 0;
+        }
+        .biz-section-subtitle {
+          font-size: 1.05rem;
+          color: var(--text-muted);
+          line-height: 1.6;
+        }
+
+        /* Testimonials */
+        :global(.biz-testimonials-grid) {
+          display: grid !important;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+          gap: 24px !important;
+        }
+        :global(.biz-testimonial-card) {
+          background: var(--bg-white) !important;
+          border: 1px solid var(--border-color) !important;
+          border-radius: 16px !important;
+          padding: 32px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          position: relative !important;
+          box-shadow: var(--shadow-sm) !important;
+        }
+        :global(.biz-testimonial-card:hover) {
+          transform: translateY(-8px) !important;
+          border-color: rgba(5, 150, 105, 0.35) !important;
+          box-shadow: 0 12px 30px rgba(0, 145, 234, 0.08) !important;
+        }
+        :global(.biz-testimonial-top) {
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          margin-bottom: 20px !important;
+          width: 100% !important;
+        }
+        :global(.biz-testimonial-role-badge) {
+          background: rgba(14, 165, 233, 0.1) !important;
+          color: #0284c7 !important;
+          padding: 6px 14px !important;
+          border-radius: 50px !important;
+          font-size: 0.8rem !important;
+          font-weight: 700 !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          gap: 6px !important;
+        }
+        :global(.biz-dot) {
+          width: 6px !important;
+          height: 6px !important;
+          border-radius: 50% !important;
+          background-color: #0ea5e9 !important;
+          display: inline-block !important;
+        }
+        :global(.biz-testimonial-quote-icon) {
+          color: rgba(14, 165, 233, 0.25) !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        :global(.biz-testimonial-quote) {
+          font-size: 0.95rem !important;
+          line-height: 1.65 !important;
+          color: var(--text-muted) !important;
+          margin-bottom: 24px !important;
+          font-style: italic !important;
+          flex-grow: 1 !important;
+        }
+        :global(.biz-testimonial-author) {
+          font-weight: 700 !important;
+          color: var(--text-dark) !important;
+          font-size: 0.95rem !important;
+          border-top: 1px solid var(--border-color) !important;
+          padding-top: 16px !important;
+        }
+
+        /* Banner styling */
+        .biz-banner-section {
+          position: relative;
+          padding: 100px 0;
+          text-align: center;
+          margin: 60px 0;
+          overflow: hidden;
+          border-radius: 24px;
+        }
+        .biz-banner-bg {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+        }
+        .biz-banner-bg img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .biz-banner-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(2, 6, 23, 0.9) 0%, rgba(15, 23, 42, 0.75) 100%);
+        }
+        .biz-banner-inner {
+          position: relative;
+          z-index: 10;
+          max-width: 700px;
+          margin: 0 auto;
+        }
+        .biz-banner-inner h2 {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: #ffffff;
+          margin-bottom: 16px;
+        }
+        .biz-banner-inner p {
+          font-size: 1.15rem;
           color: #cbd5e1;
+          margin-bottom: 30px;
+        }
+        .biz-btn-cyan-large {
+          background-color: #0091ea;
+          color: white;
+          border: none;
+          padding: 14px 32px;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+        .biz-btn-cyan-large:hover {
+          background-color: #0284c7;
         }
 
-        .biz-tag:hover {
-          background-color: #fff7ed;
-          border-color: #fed7aa;
-          color: #ea580c;
+        /* Community Check List */
+        .biz-section-paragraph {
+          font-size: 1.1rem;
+          color: var(--text-muted);
+          line-height: 1.6;
+          margin-bottom: 30px;
         }
-
-        :global([data-theme="dark"]) .biz-tag:hover {
-          background-color: rgba(234, 88, 12, 0.1);
-          border-color: #ea580c;
-          color: #fb923c;
-        }
-
-        /* 2 Column Grid */
-        .biz-grid-2 {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 48px;
-        }
-
-        @media (min-width: 992px) {
-          .biz-grid-2 {
-            grid-template-columns: 1fr 1fr;
-          }
-        }
-
-        .biz-vision-card {
-          background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-          border-radius: 32px;
-          padding: 56px 48px;
-          color: #ffffff;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .biz-vision-icon {
-          color: #60a5fa;
-          margin-bottom: 32px;
-        }
-
-        .biz-vision-card h2 {
-          font-size: 2.25rem;
-          font-weight: 800;
-          margin-bottom: 24px;
-          color: #ffffff;
-        }
-
-        .biz-vision-card p {
-          font-size: 1.125rem;
-          line-height: 1.7;
-          color: rgba(255, 255, 255, 0.85);
-          font-weight: 300;
-        }
-
-        .biz-mission-card {
-          background-color: #ffffff;
-          border-radius: 32px;
-          padding: 56px 48px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-          border: 1px solid #f1f5f9;
-        }
-
-        :global([data-theme="dark"]) .biz-mission-card {
-          background-color: #1e293b;
-          border-color: #334155;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .biz-mission-icon {
-          color: #f97316;
-          margin-bottom: 32px;
-        }
-
-        .biz-mission-card h2 {
-          font-size: 2.25rem;
-          font-weight: 800;
-          margin-bottom: 32px;
-          color: #0f172a;
-        }
-
-        :global([data-theme="dark"]) .biz-mission-card h2 {
-          color: #ffffff;
-        }
-
-        .biz-mission-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .biz-mission-list li {
+        .biz-check-list {
           display: flex;
-          align-items: flex-start;
-          margin-bottom: 20px;
+          flex-direction: column;
+          gap: 16px;
         }
-
-        .biz-mission-check {
-          width: 24px;
-          height: 24px;
+        .biz-check-item {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        }
+        .biz-check-icon {
+          color: #10b981;
+          background: rgba(16, 185, 129, 0.1);
+          padding: 6px;
           border-radius: 50%;
-          background-color: rgba(249, 115, 22, 0.1);
-          color: #ea580c;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-right: 16px;
-          margin-top: 2px;
-          flex-shrink: 0;
         }
-
-        .biz-mission-list span {
-          font-size: 1.125rem;
-          color: #475569;
-          line-height: 1.6;
-        }
-
-        :global([data-theme="dark"]) .biz-mission-list span {
-          color: #cbd5e1;
-        }
-
-        /* CTA Section */
-        .biz-cta-section {
-          position: relative;
-          padding: 120px 0;
-          background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
-          color: #ffffff;
-          text-align: center;
-        }
-
-        .biz-cta-content {
-          position: relative;
-          z-index: 10;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-
-        .biz-cta-content h2 {
-          font-size: 2.5rem;
-          font-weight: 800;
-          margin-bottom: 32px;
-          color: #ffffff;
-        }
-
-        .biz-cta-content p {
-          font-size: 1.125rem;
-          line-height: 1.7;
-          color: #fff7ed;
-          margin-bottom: 24px;
-        }
-
-        .biz-mb {
-          margin-bottom: 48px !important;
-        }
-
-        .biz-quote-box {
-          background-color: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 24px;
-          padding: 40px;
-        }
-
-        .biz-quote-box h3 {
-          font-size: 1.75rem;
-          font-weight: 800;
-          margin-bottom: 12px;
-          color: #ffffff;
-          font-family: 'Inter', -apple-system, sans-serif;
-        }
-
-        .biz-quote-box p {
-          font-size: 1.125rem;
-          font-style: italic;
-          color: #ffedd5;
-          margin-bottom: 0;
-        }
-
-        /* Additional Sections Styles */
-        .biz-section-desc {
-          font-size: 1.125rem;
-          color: #475569;
-          max-width: 800px;
-          margin: 0 auto;
-          line-height: 1.6;
-        }
-
-        :global([data-theme="dark"]) .biz-section-desc {
-          color: #cbd5e1;
-        }
-
-        .biz-testi-card {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-
-        .biz-testi-star {
-          font-size: 1rem;
-          font-weight: 700;
-          color: #f59e0b;
-          margin-bottom: 16px;
-          padding: 6px 12px;
-          background-color: rgba(245, 158, 11, 0.1);
-          border-radius: 50px;
-          display: inline-block;
-          width: fit-content;
-        }
-
-        .biz-testi-quote {
-          font-size: 1.05rem;
-          line-height: 1.6;
-          color: #334155;
-          margin-bottom: 24px;
-          flex-grow: 1;
-        }
-
-        :global([data-theme="dark"]) .biz-testi-quote {
-          color: #e2e8f0;
-        }
-
-        .biz-testi-author {
-          font-weight: 700;
-          color: #0f172a;
-          font-size: 1rem;
-          border-top: 1px solid #e2e8f0;
-          padding-top: 16px;
-        }
-
-        :global([data-theme="dark"]) .biz-testi-author {
-          color: #f8fafc;
-          border-color: #334155;
-        }
-
-        .biz-community-box {
-          background-color: #ffffff;
-          border-radius: 24px;
-          padding: 48px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-          border: 1px solid #f1f5f9;
-          margin-bottom: 48px;
-        }
-
-        :global([data-theme="dark"]) .biz-community-box {
-          background-color: #0f172a;
-          border-color: #334155;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .biz-community-box h3 {
-          font-size: 1.75rem;
-          font-weight: 800;
-          margin-bottom: 32px;
-          color: #0f172a;
-          text-align: center;
-        }
-
-        :global([data-theme="dark"]) .biz-community-box h3 {
-          color: #ffffff;
-        }
-
-        .biz-community-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-          .biz-community-grid {
-            grid-template-columns: 1fr 1fr;
-          }
-        }
-
-        .biz-community-item {
-          display: flex;
-          align-items: center;
-          background-color: #f8fafc;
-          padding: 16px 24px;
-          border-radius: 16px;
-          font-size: 1.05rem;
+        .biz-check-item span {
           font-weight: 500;
-          color: #334155;
-          transition: transform 0.2s ease;
-        }
-
-        :global([data-theme="dark"]) .biz-community-item {
-          background-color: #1e293b;
-          color: #cbd5e1;
-        }
-
-        .biz-community-item:hover {
-          transform: translateY(-2px);
-          background-color: #f1f5f9;
-        }
-
-        :global([data-theme="dark"]) .biz-community-item:hover {
-          background-color: #334155;
-        }
-
-        .biz-share-story {
-          text-align: center;
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 48px;
-          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-          border-radius: 24px;
-          border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        :global([data-theme="dark"]) .biz-share-story {
-          background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
-          border-color: rgba(59, 130, 246, 0.3);
-        }
-
-        .biz-share-story h3 {
-          font-size: 2rem;
-          font-weight: 800;
-          color: #1e3a8a;
-          margin-bottom: 16px;
-        }
-
-        :global([data-theme="dark"]) .biz-share-story h3 {
-          color: #93c5fd;
-        }
-
-        .biz-share-story p {
-          font-size: 1.125rem;
-          color: #475569;
-          line-height: 1.6;
-          margin-bottom: 24px;
-        }
-
-        :global([data-theme="dark"]) .biz-share-story p {
-          color: #cbd5e1;
-        }
-
-        .biz-story-highlight {
-          font-size: 1.25rem !important;
-          font-weight: 700;
-          color: #f97316 !important;
-          margin-bottom: 32px !important;
-        }
-
-        .biz-btn-primary {
-          background-color: #f58220;
-          color: white;
-          border: none;
-          padding: 16px 32px;
-          border-radius: 50px;
-          font-size: 1.125rem;
-          font-weight: 700;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 10px 20px -5px rgba(245, 130, 32, 0.4);
-        }
-
-        .biz-btn-primary:hover {
-          background-color: #ea580c;
-          transform: translateY(-2px);
-          box-shadow: 0 15px 25px -5px rgba(245, 130, 32, 0.5);
-        }
-
-        @media (max-width: 768px) {
-          .biz-title {
-            font-size: 2.5rem;
-          }
-          .biz-hero {
-            padding: 120px 0 80px;
-          }
-          .biz-section {
-            padding: 80px 0;
-          }
-          .biz-card {
-            padding: 32px;
-          }
-          .biz-vision-card, .biz-mission-card {
-            padding: 40px 32px;
-          }
+          color: var(--text-dark);
+          font-size: 1rem;
         }
       `}</style>
     </>
